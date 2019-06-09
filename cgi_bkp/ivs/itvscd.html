@@ -1,0 +1,1057 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(function(){
+  $("input").keypress(function(ev) {
+    if ((ev.which && ev.which === 13) ||
+        (ev.keyCode && ev.keyCode === 13)) {
+      return false;
+    } else {
+      return true;
+    }
+  });
+});
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<title>漢方のセイシンドー問診票　子供用</title>
+		<meta name="revisit_after" content="7 days" />
+		<meta name="robots" content="ALL" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<link rel="index" href="index.html" />
+		<meta name="Description" content="メールフォームCGI 6.1.0" />
+<meta name="GENERATOR" content="JustSystems Homepage Builder Version 15.0.12.0 for Windows" />
+</head>
+<body>
+<div id="mf_wrapper" align="center">
+			
+    <h1 style="text-align : center;" align="center">問 診 票（子供用）　</h1>
+ 
+<form id="mailform" method="post" action="itvs/send.cgi" onsubmit="return sendmail(this);">
+  <table border="0" width="790" bgcolor="#f8fdb7">
+    <tbody>
+      <tr>
+        <th align="left">＊お名前</th>
+        <td align="left"><input type="text" name="お名前(必須)" size="40" /></td>
+      </tr>
+      <tr>
+        <th align="left">＊ふりがな</th>
+        <td align="left"><input type="text" name="ふりがな(必須)" size="40" /></td>
+      </tr>
+      <tr>
+        <th align="left">＊保護者のお名前</th>
+        <td><INPUT size="40" type="text" name="保護者のお名前(必須)" /></td>
+      </tr>
+      <tr>
+        <th align="left">　郵便番号</th>
+        <td align="left"><input type="text" name="郵便番号" size="10" /> <input type="button" value="〒から住所を自動入力" onclick="mfpc('mailform','郵便番号','住所(必須)');" /></td>
+      </tr>
+      <tr>
+        <th align="left">＊ご住所　１</th>
+        <td align="left"><input type="text" name="住所(必須)" size="70" /></td>
+      </tr>
+      <tr>
+        <th align="left">＊ご住所　建物名等　</th>
+        <td align="left"><input type="text" name="住所(マンション名等)" size="70" /></td>
+      </tr>
+      <tr>
+        <th align="left">＊連絡先お電話番号</th>
+        <td><INPUT size="60" type="text" name="連絡先お電話番号(必須)" /></td>
+      </tr>
+      <tr>
+        <th align="left">＊性別</th>
+        <td><b>性別　<label for="a1"><INPUT type="radio" name="性別" value="男" id="a1"/><font color="#0000ff">男</font></label>　　　<label for="a2"><INPUT type="radio" checked="checked" name="性別" value="女" id="a2" /><font color="#ff0000">女</font></label>　　</b></td>
+      </tr>
+      <tr>
+        <th align="left">＊体重・身長・年齢</th>
+        <td><b>身長<input size="10" type="text" name="身長(必須)" data-validate-at-blur="true" />ｃｍ　　体重<input size="10" type="text" name="体重(必須)" data-validate-at-blur="true" />ｋｇ　　満年齢<input size="10" type="text" name="満年齢(必須)" data-validate-at-blur="true" />歳</b></td>
+      </tr>
+      <tr>
+        <th align="left">＊メールアドレス<span></span></th>
+        <td align="left"><input type="text" id="email" name="email(必須)" size="60" maxlength="60" class="mf" /></td>
+      </tr>
+      <tr>
+        <th align="left">＊確認用メールアドレス<span></span></th>
+        <td align="left"><input type="text" id="confirm_email" name="confirm_email(必須)" size="60" class="mf" style="width: 360px;" /><label id="email_error_message" style="font-size: 13px; color: red; padding-left: 10px; display: none;">一致しません</label></td>
+      </tr>
+      <tr>
+        <th align="left">携帯ロングメールの受信</th>
+        <td><b><font color="#000000">５０００文字以上の受信</font></b>　　　<label for="a5"><INPUT type="radio" name="携帯ロングメール" value="受信可能" checked="checked" id="a5" /><b><font color="#0000ff">受信可能</font></b></label>　　　　　　　<label for="a6"><INPUT type="radio" name="携帯ロングメール" value="受信不可" id="a6" /><b><font color="#ff0000">受信不可</font></b></label></td>
+      </tr>
+      <tr>
+        <th align="left">&#160;</th>
+        <td align="left">&#160;<b><font color="#ff0000">＊印は必ずご記入ください。</font></b></td>
+      </tr>
+    </tbody>
+  </table>
+  <input type="hidden" name="**************************************************************" value=" " />
+  <table border="0" width="790">
+    <tbody>
+      <tr>
+        <td align="left" bgcolor="#d9ffec">&#160;<b><font color="#0000ff">匿名希望の方は、お名前に姓（苗字）のみご記入頂き、ご住所は都道府県のみご記入ください</font></b>。<BR />
+      <b><font color="#0000ff">お電話番号は、「１２３４」で結構です。</font></b></td>
+      </tr>
+      <tr>
+        <td align="center">　+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font size="+1">記載事項でわからない事があった場合、こちらからお尋ねする事や　　診断結果をお伝えする時のご連絡手段について。</font></b></td>
+      </tr>
+      <tr>
+        <td><b>（a）　直接電話によるご確認・報告<BR />
+      　　　<label for="b1"><INPUT type="radio" name="連絡方法　直接電話による確認・報告" value="可能" id="b1" /><font color="#0000ff">可能</font></label>　　　　　<label for="b2"><INPUT type="radio" checked="checked" name="連絡方法　直接電話による確認・報告" value="不可" id="b2" /><font color="#ff0000">不可</font></label></b></td>
+      </tr>
+      <tr>
+        <td><b>（b）　Ｅ－ｍａｉｌによるご確認・報告<BR />
+      　　　<label for="b3"><INPUT type="radio" name="連絡方法　E-mailによる確認・報告" value="可能" checked="checked" id="b3" /><font color="#0000ff">可能</font></label>　　 　 　<label for="b4"><INPUT type="radio" name="連絡方法　E-mailによる確認・報告" value="不可" id="b4"/><font color="#ff0000">不可</font></label></b></td>
+      </tr>
+      <tr>
+        <td><b>（c）　ＦＡＸによるご確認・報告<BR />
+      　　　<label for="b5"><INPUT type="radio" name="連絡方法　FAXによる確認・報告" value="可能" id="b5"/><font color="#0000ff">可能</font></label>　　　　　<label for="b6"><INPUT type="radio" name="連絡方法　FAXによる確認・報告" value="不可" checked="checked" id="b6"/><font color="#ff0000">不可</font></label></b>　<b>　　<font color="#0000ff"> ＦＡＸ番号</font>　<INPUT size="40" type="text" name="ＦＡＸ番号" style="background-color : #dfffff;" /></b> <input type="hidden" name="**************************************************************" value=" " />
+</td>
+      </tr>
+      <tr>
+        <td>　　　</td>
+      </tr>
+      <tr>
+        <td><b>（d）　クラブ活動やスポーツ・アルバイトをしておられる場合は、具体的な内容を記入してください。</b><BR />
+      <b><INPUT size="90" type="text" name="クラブ活動やスポーツ・アルバイトの内容" /></b></td>
+      </tr>
+      <tr>
+        <td><b>（e）　現在までに患った大きな病気または、現在治療中の疾患があれば記入して下さい。</b><BR />
+      <b><textarea rows="5" cols="90" name="罹患歴・現在治療中の疾病"></textarea></b></td>
+      </tr>
+      <tr>
+        <td><b>（f）　現在服用中の医薬品・健康食品等があれば記入してください。</b><BR />
+      <b><textarea rows="3" cols="90" name="服用中の医薬品・健康食品等"></textarea></b></td>
+      </tr>
+      <tr>
+        <td><b>（g）　両親または直系親族の中に、癌・糖尿病・脳血管事故・高血圧・リュウマチ等の自己免疫疾患・高脂血症等の遺伝的要素の高い疾患に罹患した方の有無。</b><BR />
+      <label for="b7"><INPUT type="radio" name="両親・親族の罹患歴" value="遺伝的要素の高い疾患に罹患した方があり" id="b7" /><font color="#000099"><b>罹患した者がいる</b></font></label>　　　　<label for="b8"><INPUT type="radio" name="両親・親族の罹患歴" checked="checked" value="該当なし" id="b8" /><font color="#000099"><b>該当なし</b></font></label></td>
+      </tr>
+      <tr>
+        <td><font color="#0000ff"><b>「罹患した者がいる」の場合は、その疾患名をご記入ください。</b></font><BR />
+      <textarea rows="2" cols="90" name="遺伝的要素の高い疾患名"></textarea></td>
+      </tr>
+      <tr>
+        <td align="center">　+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">今、お悩みの病気・症状について詳しくお聞かせ下さい</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><b>（a）　病気・症状を詳しく記入してください</b>。<BR />
+      <textarea rows="10" cols="90" name="今悩んでいる病気・症状について" style="background-color : #dfffff;"></textarea></td>
+      </tr>
+      <tr>
+        <td><b>（b）　いつ頃からか詳しく記入してください</b>。<BR />
+      <textarea rows="10" cols="90" name="病気・症状はいつ頃から出だしたか" style="background-color : #dfffff;"></textarea></td>
+      </tr>
+      <tr>
+        <td><b>（c）　皮膚湿疹等、外見の異常が有る場合は詳しく記入してください」<br />
+        ｢陰部掻痒」でご相談の方は、最後に詳細を記入する欄があります。</b><BR />
+      <textarea rows="10" cols="90" name="皮膚湿疹等、患部の状態についての詳細" style="background-color : #dfffff;"></textarea></td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">全身的な質問</font></b>　　　<b><font color="#990099">１－２１</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><label for="c1"><INPUT type="checkbox" name="全身的な質問" value="日頃は健康" id="c1"/>日頃は健康</label>　　　　<label for="c2"><INPUT type="checkbox" name="全身的な質問" value="アレルギー体質である" id="c2"/>アレルギー体質</label>　　　　<label for="c3"><INPUT type="checkbox" name="全身的な質問" value="花粉症がある" id="c3" />花粉症である</label>　　　　<label for="c4"><INPUT type="checkbox" name="全身的な質問" value="疲れやすい" id="c4"/>疲れやすい</label></td>
+      </tr>
+      <tr>
+        <td><label for="c5"><INPUT type="checkbox" name="全身的な質問" value="風邪をひきやすい" id="c5"/>風邪をひきやすい</label>　　　　<label for="c6"><INPUT type="checkbox" name="全身的な質問" value="寒がりである" id="c6"/>寒がり</label>　　　　<label for="c7"><INPUT type="checkbox" name="全身的な質問" value="暑がりである" id="c7"/>暑がり</label>　　　　<label for="c8"><INPUT type="checkbox" name="全身的な質問" value="汗かきである" id="c8"/>汗かき</label></td>
+      </tr>
+      <tr>
+        <td><label for="c9"><INPUT type="checkbox" name="全身的な質問" value="頻繁に寝汗をかく" id="c9"/>頻繁に寝汗をかく</label>　　　　<label for="c10"><INPUT type="checkbox" name="全身的な質問" value="身体がだるい" id="c10"/>身体がだるい</label>　　　　<label for="c11"><INPUT type="checkbox" name="全身的な質問" value="手足がほてる" id="c11"/>手足がほてる</label>　　　　<label for="c12"><INPUT type="checkbox" name="全身的な質問" value="手足が痛む" id="c12"/>手足が痛む</label></td>
+      </tr>
+      <tr>
+        <td><label for="c13"><INPUT type="checkbox" name="全身的な質問" value="手や足の裏がじっとり湿っている" id="c13"/>手や足の裏がじっとり湿っている</label>　　　　<label for="c14"><INPUT type="checkbox" name="全身的な質問" value="手足がしびれる" id="c14"/>手足がしびれる</label>　　　　<label for="c15"><INPUT type="checkbox" name="全身的な質問" value="腰が痛む" id="c15"/>腰が痛む</label></td>
+      </tr>
+      <tr>
+        <td><label for="c16"><INPUT type="checkbox" name="全身的な質問" value="腰がだるい" id="c16"/>腰がだるい</label>　　　　<label for="c17"><INPUT type="checkbox" name="全身的な質問" value="冷房が苦手である" id="c17"/>冷房が苦手</label>　　　　<label for="c18"><INPUT type="checkbox" name="全身的な質問" value="暖房が苦手である" id="c18"/>暖房が苦手</label>　　　　<label for="c19"><INPUT type="checkbox" name="全身的な質問" value="乗物酔いをしやすい" id="c19"/>乗物に酔いやすい</label><label></label></td>
+      </tr>
+      <tr>
+        <td>&#160;　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">病状についての質問</font></b>　　　<b><font color="#990099">２－２１</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><b>症状が悪化する季節は</b><BR />
+      <label for="d1"><INPUT type="checkbox" name="症状が悪化する季節" value="春" id="d1"/>春</label>　　　　　<label for="d2"><INPUT type="checkbox" name="症状が悪化する季節" value="梅雨時期" id="d2"/>梅雨</label>　　　　　<label for="d3"><input type="checkbox" name="症状が悪化する季節" value="夏" id="d3" />夏</label>　　　　　<label for="d4"><INPUT type="checkbox" name="症状が悪化する季節" value="秋" id="d4"/>秋</label>　　　　　<label for="d5"><INPUT type="checkbox" name="症状が悪化する季節" value="冬" id="d5"/>冬</label>　　　　　<label for="d6"><INPUT type="checkbox" name="症状が悪化する季節" value="年中を通して同じ" id="d6"/>年中同じ</label></td>
+      </tr>
+      <tr>
+        <td><label for="d7"><INPUT type="checkbox" name="病状について" value="入浴中は悪化する" id="d7"/>入浴中は悪化する</label>　　　<label for="d8"><INPUT type="checkbox" name="病状について" value="入浴中は楽になる" id="d8"/>入浴中は楽になる</label>　　　<label for="d9"><INPUT type="checkbox" name="病状について" value="寝ている時は気にならない" id="d9"/>寝ている時は気にならない</label></td>
+      </tr>
+      <tr>
+        <td><label for="d10"><INPUT type="checkbox" name="病状について" value="寝床に入ると悪化して寝てしまったら気にならない" id="d10"/>寝床に入ると悪化するが寝てしまうと気にならない</label>　　　<label for="d11"><INPUT type="checkbox" name="病状について" value="寝ると夜中に悪化して起きる" id="d11"/>寝ると悪化して夜中に目が覚める</label></td>
+      </tr>
+      <tr>
+        <td><label for="d12"><INPUT type="checkbox" name="病状について" value="朝起きた時に症状が悪化する" id="d12"/>朝起きた時に症状が悪化する</label>　　　<label for="d13"><INPUT type="checkbox" name="病状について" value="朝から夕方にかけて症状が悪化する" id="d13"/>朝から夕方にかけて症状が悪化する</label></td>
+      </tr>
+      <tr>
+        <td><label for="d14"><INPUT type="checkbox" name="病状について" value="朝から昼にかげて症状が悪化する" id="d14"/>朝から昼にかけて症状が悪化する</label>　　　<label for="d15"><INPUT type="checkbox" name="病状について" value="昼から夜にかけて症状が悪化する" id="d15"/>昼から夜にかけて症状が悪化する</label></td>
+      </tr>
+      <tr>
+        <td><label for="d16"><INPUT type="checkbox" name="病状について" value="夕方から夜にかけて症状が悪化する" id="d16"/>夕方から夜にかけて症状が悪化する</label>　　　<label for="d17"><INPUT type="checkbox" name="病状について" value="一日を通して症状の変化はない" id="d17"/>一日を通して症状の変化はない</label></td>
+      </tr>
+      <tr>
+        <td><label for="d18"><INPUT type="checkbox" name="病状について" value="身体を動かすと悪化する" id="d18"/>身体を動かすと悪化する</label>　　　<label for="d19"><INPUT type="checkbox" name="病状について" value="安静にしていても悪化する" id="d19"/>安静にしていても悪化する</label>　　　<label for="d20"><INPUT type="checkbox" name="病状について" value="症状は身体の動きに関係ない" id="d20"/>身体の動きには関係ない</label></td>
+      </tr>
+      <tr>
+        <td><label for="d21"><INPUT type="checkbox" name="病状について" value="患部を手でさすったりマッサージすると楽になる" id="d21"/>患部を手でさすったりマッサージすると楽になる</label>　　　<BR />
+      <label for="d22"><INPUT type="checkbox" name="病状について" value="患部を触ったりマッサージすると悪化する" id="d22"/>患部を触ったりマッサージすると悪化する</label></td>
+      </tr>
+      <tr>
+        <td><label for="d23"><INPUT type="checkbox" name="病状について" value="食後に悪化する" id="d23"/>食後に悪化する</label>　　　<label for="d24"><INPUT type="checkbox" name="病状について" value="空腹時に悪化する" id="d24"/>空腹時に悪化する</label>　　　<label for="d25"><INPUT type="checkbox" name="病状について" value="月経周期に合わせて悪化する" id="d25"/>月経周期に合わせて悪化する</label></td>
+      </tr>
+      <tr>
+        <td><label for="d26"><INPUT type="checkbox" name="病状について" value="月経前に悪化する" id="d26"/>月経前に悪化する</label>　　　<label for="d27"><INPUT type="checkbox" name="病状について" value="月経が始まったら悪化する" id="d27"/>月経が始まると悪化する</label>　　　<label for="d28"><INPUT type="checkbox" name="病状について" value="月経後に悪化する" id="d28"/>月経後に悪化する</label></td>
+      </tr>
+      <tr>
+        <td><label for="d29"><INPUT type="checkbox" name="病状について" value="排卵時に悪化する" id="d29"/>排卵時期に悪化する</label>　　　<label for="d30"><INPUT type="checkbox" name="病状について" value="排卵時期～月経開始まで悪化する" id="d30"/>排卵時期～月経開始まで悪化する</label></td>
+      </tr>
+      <tr>
+        <td><label for="d31"><INPUT type="checkbox" name="病状について" value="雨降りは特に調子が悪い" id="d31"/>雨降りは特に調子が悪い</label>　　　<label for="d32"><INPUT type="checkbox" name="病状について" value="天気が悪くなる前に悪化する" id="d32"/>天気が悪くなる前に悪化する</label>　　　<label for="d33"><INPUT type="checkbox" name="病状について" value="空気が乾燥すると悪化する" id="d33"/>空気が乾くと悪化する</label></td>
+      </tr>
+      <tr>
+        <td><label for="d34"><INPUT type="checkbox" name="病状について" value="暑い日は悪化する" id="d34"/>暑い日は悪化する</label>　　　　　<label for="d35"><INPUT type="checkbox" name="病状について" value="寒い日は悪化する" id="d35"/>寒い日は悪化する</label>　　　　　<label for="d36"><INPUT type="checkbox" name="病状について" value="疲れると悪化する" id="d36"/>疲れると悪化する</label></td>
+      </tr>
+      <tr>
+        <td><label for="d37"><INPUT type="checkbox" name="病状について" value="登校・登園または外出すると悪化する" id="d37" />登校・登園または外出すると悪化する</label>　　　　　<label for="d38"><INPUT type="checkbox" name="病状について" value="緊張すると悪化する" id="d38"/>緊張すると悪化する</label></td>
+      </tr>
+      <tr>
+        <td><label for="d39"><INPUT type="checkbox" name="病状について" value="電車やバスなど乗り物に乗ると悪化する" id="d39"/>電車やバスなど乗り物に乗ると悪化する</label>　　　　　<label for="d40"><INPUT type="checkbox" name="病状について" value="家の中に居ると悪化する" id="d40"/>家の中にいると悪化する</label></td>
+      </tr>
+      <tr>
+        <td><b>（a）　その他、症状が悪化する時がわかれば、気付いた事は全て記入してください。<BR />
+      </b><textarea rows="4" cols="90" name="症状が悪化する時"></textarea></td>
+      </tr>
+      <tr>
+        <td><b>（b）　その他、症状が良くなる時がわかれば、気付いた事は全て記入してください。</b><BR />
+      <textarea rows="4" cols="90" name="症状が良くなるとき"></textarea></td>
+      </tr>
+      <tr>
+        <td align="center">　+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">精神面についての質問</font></b>　　　<b><font color="#990099">３－２１</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><label for="e1"><input type="checkbox" name="精神面についての質問" value="くよくよする" id="e1" />くよくよする</label>　　　<label for="e2"><input type="checkbox" name="精神面についての質問" value="神経質である" id="e2" />神経質</label>　　　<label for="e3"><input type="checkbox" name="精神面についての質問" value="いらいらする" id="e3" />イライラする</label>　　　<label for="e4"><input type="checkbox" name="精神面についての質問" value="驚きやすい" id="e4" />驚きやすい</label>　　　<label for="e5"><INPUT type="checkbox" name="精神面についての質問" value="恐がりである" id="e5"/>恐がり</label></td>
+      </tr>
+      <tr>
+        <td><label for="e6"><INPUT type="checkbox" name="精神面についての質問" value="物忘れが多い" id="e6"/>物忘れが多い</label>　　<label for="e7"><INPUT type="checkbox" name="精神面についての質問" value="強迫感がある" id="e7"/>強迫感がある</label>　　　<label for="e8"><INPUT type="checkbox" name="精神面についての質問" value="よくキレて大声を出す" id="e8"/>よくキレて大声を出す</label>　　　<label for="e9"><INPUT type="checkbox" name="精神面についての質問" value="気分が沈む・塞ぐ" id="e9"/>気分が沈む・塞ぐ</label></td>
+      </tr>
+      <tr>
+        <td><label for="e10"><INPUT type="checkbox" name="精神面についての質問" value="そわそわして落ち着きがない" id="e10"/>そわそわして落ち着きがない</label>　　　　　<label for="e11"><INPUT type="checkbox" name="精神面についての質問" value="不安感が強い" id="e11"/>不安感が強い</label>　　　　　<label for="e12"><INPUT type="checkbox" name="精神面についての質問" value="よくため息がでる" id="e12"/>よくため息が出る</label></td>
+      </tr>
+      <tr>
+        <td><label for="e13"><INPUT type="checkbox" name="精神面についての質問" value="周囲の人の会話や仕草が気になる" id="e13"/>周囲の人の会話やしぐさが気になる</label>　　　　　<label for="e14"><INPUT type="checkbox" name="精神面についての質問" value="ストレスを感じたことがない" id="e14"/>ストレスを感じたことがない</label></td>
+      </tr>
+      <tr>
+        <td><label for="e15"><INPUT type="checkbox" name="精神面についての質問" value="園や学校が楽しい" id="e15" />園や学校が楽しい</label>　　　　　<label for="e16"><INPUT type="checkbox" name="精神面についての質問" value="人としゃべることが好きだ" id="e16"/>人としゃべる事が好きだ</label>　　　　　<label for="e17"><INPUT type="checkbox" name="精神面についての質問" value="人の話を聞くのが苦手" id="e17"/>人の話を聞くのが苦手</label></td>
+      </tr>
+      <tr>
+        <td><label for="e18"><INPUT type="checkbox" name="精神面についての質問" value="心から何でも話せる相手がいない" id="e18"/>心から何でも話せる相手がいない</label>　　　　　<label for="e19"><INPUT type="checkbox" name="精神面についての質問" value="知らない人としゃべる事が苦手" id="e19"/>知らない人としゃべる事が苦手</label></td>
+      </tr>
+      <tr>
+        <td><label for="e20"><INPUT type="checkbox" name="精神面についての質問" value="最近ストレスを感じる" id="e20"/>最近ストレスを感じる</label>　　　　　<label for="e21"><INPUT type="checkbox" value="先生から怒られると、登園・登校したくなくなる" name="精神面についての質問" id="e21" />先生から怒られると、登園・登校したくなくなる</label></td>
+      </tr>
+      <tr>
+        <td><label for="e22"><INPUT type="checkbox" name="精神面についての質問" value="真剣に自殺を考えたことがある" id="e22"/>真剣に自殺を考えたことがある</label>　　　　　<label for="e23"><INPUT type="checkbox" name="精神面についての質問" value="自殺未遂の経験がある" id="e23"/>自殺未遂の経験がある</label></td>
+      </tr>
+      <tr>
+        <td>&#160;　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">睡眠についての質問</font></b>　　　<b><font color="#990099">４－２１</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><label for="f1"><INPUT type="checkbox" name="睡眠についての質問" value="よく寝られる" id="f1"/>よく寝られる</label>　　　　<label for="f2"><INPUT type="checkbox" name="睡眠についての質問" value="寝つきが悪い" id="f2"/>寝つきが悪い</label>　　　　<label for="f3"><INPUT type="checkbox" name="睡眠についての質問" value="不眠症である" id="f3"/>不眠症である</label>　　　　<label for="f4"><INPUT type="checkbox" name="睡眠についての質問" value="直ぐ目が覚める" id="f4"/>すぐ目が覚める</label></td>
+      </tr>
+      <tr>
+        <td><label for="f5"><INPUT type="checkbox" name="睡眠についての質問" value="日中がねむたい" id="f5"/>日中がねむたい</label>　　　　<label for="f6"><INPUT type="checkbox" name="睡眠についての質問" value="よく夢を見る" id="f6"/>よく夢を見る</label>　　　　<label for="f7"><INPUT type="checkbox" name="睡眠についての質問" value="寝つきは良いが夜中に何度も目が覚める" id="f7"/>寝つきは良いが夜中に何度も目が覚める</label></td>
+      </tr>
+      <tr>
+        <td><label for="f8"><INPUT type="checkbox" name="睡眠についての質問" value="悪夢にうなされることが多い" id="f8"/>悪夢にうなされる事が多い</label>　　　　　<label for="f9"><INPUT type="checkbox" name="睡眠についての質問" value="よく昼寝をする" id="f9"/>よく昼寝をする</label>　　　　　<label for="f10"><INPUT type="checkbox" name="睡眠についての質問" value="朝、二度寝をする" id="f10"/>朝二度寝をする</label></td>
+      </tr>
+    <tr>
+        <td><label for="f15"><INPUT type="checkbox" name="睡眠についての質問" value="深夜１２時までには就寝している" id="f15"/>深夜１２時までには就寝している</label>　　　　　<label for="f16"><INPUT type="checkbox" name="睡眠についての質問" value="遊びや勉強などで夜更かしをする" id="f16" />遊びや勉強などで夜更かしをする</label></td>
+      </tr>
+      <tr>
+        <td><label for="f17"><INPUT type="checkbox" name="睡眠についての質問" value="寝ないで朝まで遊ぶことがある" id="f17" />寝ないで朝まで遊ぶことがある</label>　　　　　　<b>平均の睡眠時間は<INPUT size="10" type="text" name="平均の睡眠時間（時間）" />時間</b></td>
+      </tr>
+      <tr>
+        <td>&#160;　　　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">食生活についての質問</font></b>　　　<b><font color="#990099">５－２１</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><label for="g1"><INPUT type="checkbox" name="食生活についての質問" value="甘い物が好き" id="g1"/>甘い物が好き</label>　　　　<label for="g2"><INPUT type="checkbox" name="食生活についての質問" value="辛い物が好き" id="g2"/>辛い物が好き（唐辛子やニンニクなど）</label>　　　　<label for="g3"><INPUT type="checkbox" name="食生活についての質問" value="塩分をよくとる" id="g3"/>塩分をよくとる</label></td>
+      </tr>
+      <tr>
+        <td><label for="g4"><INPUT type="checkbox" name="食生活についての質問" value="油物が好き" id="g4"/>油物が好き</label>　　　　<label for="g5"><INPUT type="checkbox" name="食生活についての質問" value="肉類が好き" id="g5"/>肉類が好き</label>　　　　<label for="g6"><INPUT type="checkbox" name="食生活についての質問" value="外食やコンビニの弁当が多い" id="g6"/>外食やコンビニの弁当が多い</label></td>
+      </tr>
+      <tr>
+        <td><label for="g7"><INPUT type="checkbox" name="食生活についての質問" value="酢の物が好き" id="g7"/>酢の物が好き</label>　　　　<label for="g8"><INPUT type="checkbox" name="食生活についての質問" value="野菜をよく食べる" id="g8"/>野菜をよく食べる</label>　　　　<label for="g9"><INPUT type="checkbox" name="食生活についての質問" value="野菜は苦手" id="g9"/>野菜は苦手</label>　　　　<label for="g10"><INPUT type="checkbox" name="食生活についての質問" value="魚をよく食べる" id="g10"/>魚をよく食べる</label></td>
+      </tr>
+      <tr>
+        <td><label for="g11"><INPUT type="checkbox" name="食生活についての質問" value="煮物・煮魚はあまり食べない" id="g11"/>煮物・煮魚はあまり食べない</label>　　　　<label for="g12"><INPUT type="checkbox" name="食生活についての質問" value="魚の刺身はほとんど毎日食べる" id="g12"/>魚の刺身はほとんど毎日食べる</label></td>
+      </tr>
+      <tr>
+        <td><label for="g13"><INPUT type="checkbox" name="食生活についての質問" value="パン食が多い" id="g13"/>パン食が多い</label>　　　　<label for="g14"><INPUT type="checkbox" name="食生活についての質問" value="間食をする" id="g14"/>間食をする</label>　　　　<label for="g15"><INPUT type="checkbox" name="食生活についての質問" value="好き嫌いが多い" id="g15"/>好き嫌いが多い</label>　　　　<label for="g16"><INPUT type="checkbox" name="食生活についての質問" value="寝る前に飲食する" id="g16"/>寝る前に飲食する</label></td>
+      </tr>
+      <tr>
+        <td><label for="g17"><INPUT type="checkbox" name="食生活についての質問" value="食事は毎日きちんと３回食べる" id="g17"/>食事は毎日きちんと３回食べる</label>　　　<label for="g18"><INPUT type="checkbox" name="食生活についての質問" value="朝食は食べていない" id="g18"/>朝食は食べていない</label>　　　<label for="g19"><INPUT type="checkbox" name="食生活についての質問" value="食事の時間は不規則である" id="g19"/>食事の時間は不規則</label></td>
+      </tr>
+      <tr>
+        <td><label for="g20"><INPUT type="checkbox" name="食生活についての質問" value="どちらかと言えば和食より中華や洋食の方が多い" id="g20"/>どちらかと言えば和食より中華や洋食の方が多い</label>　　　<label for="g40"><INPUT type="checkbox" name="食生活についての質問" value="スナック菓子をよく食べる"id="g40" />スナック菓子をよく食べる</label></td>
+      </tr>
+      <tr>
+        <td><label for="g21"><INPUT type="checkbox" name="食生活についての質問" value="１日３回の食事の時間は、だいたい決まった時間に食べている" id="g21"/>１日３回の食事の時間は、だいたい決まった時間に食べている</label></td>
+      </tr>
+      <tr>
+        <td><label for="g22"><INPUT type="checkbox" name="食生活についての質問" value="毎朝、朝食が美味しく感じられる" id="g22"/>毎朝、朝食がおいしく感じられる</label>　　　<label for="g23"><INPUT type="checkbox" name="食生活についての質問" value="起床時に空腹感がない" id="g23"/>起床時に空腹感がない</label>　　　<label for="g24"><INPUT type="checkbox" name="食生活についての質問" value="たまにお酒を飲む" id="g24" />たまにお酒を飲む</label></td>
+      </tr>
+    <tr>
+        <td><label for="g28"><INPUT type="checkbox" name="食生活についての質問" value="冷たい食べ物・飲み物を好む" id="g28"/>冷たい食べ物や飲み物を好む</label>　　　　<label for="g29"><INPUT type="checkbox" name="食生活についての質問" value="冷たい物は飲めないし食べられない" id="g29"/>冷たい物は飲めないし食べられない</label></td>
+      </tr>
+      <tr>
+        <td><label for="g30"><INPUT type="checkbox" name="食生活についての質問" value="水分はほとんど摂らない" id="g30"/>水分はほとんど摂らない</label>　　　<label for="g31"><INPUT type="checkbox" name="食生活についての質問" value="毎日牛乳を飲んでいる" id="g31"/>毎日牛乳を飲んでいる</label>　　　<label for="g32"><INPUT type="checkbox" name="食生活についての質問" value="毎日健康飲料を飲んでいる" id="g32"/>毎日健康飲料を飲んでいる</label></td>
+      </tr>
+      <tr>
+        <td><label for="g33"><INPUT type="checkbox" name="食生活についての質問" value="ジュース・コーヒー・お茶などの水分をよく飲む" id="g33"/>ジュース・コーヒー・お茶などの水分をよく飲む</label>　　　　　<label for="g34"><INPUT type="checkbox" name="食生活についての質問" value="ダイエットをしている" id="g34"/>ダイエットをしている</label></td>
+      </tr>
+      <tr>
+        <td><label for="g35"><INPUT type="checkbox" name="食生活についての質問" value="身体によいと思って、毎日大量の水分を摂取している" id="g35"/>身体によいと思って、毎日大量の水分を摂取している</label></td>
+      </tr>
+      <tr>
+        <td><label for="g36"><INPUT type="checkbox" name="食生活についての質問" value="食事後は満腹感がある" id="g36"/>食事後は満腹感がある</label>　　　　　<label for="g37"><INPUT type="checkbox" name="食生活についての質問" value="口が寂しく、ついつい飲み物を飲む" id="g37"/>口が寂しくてついつい飲み物を飲む</label></td>
+      </tr>
+      <tr>
+        <td><b>タバコを吸っている</b>　　　　<label for="g38"><INPUT type="radio" name="喫煙状況" value="喫煙している" id="g38" />はい</label>　　　　<label for="g39"><INPUT type="radio" name="喫煙状況" value="喫煙していない" checked="checked" id="g39" />いいえ</label>　　　　　<b>吸う場合　１日<INPUT size="8" type="text" name="１日の喫煙本数（本）" />本</b></td>
+      </tr>
+      <tr>
+        <td><b>何歳から喫煙を始められましたか？　<INPUT size="8" type="text" name="喫煙開始年齢（歳）" />歳</b></td>
+      </tr>
+      <tr>
+        <td>&#160;　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">血圧についての質問</font></b>　　　<b><font color="#990099">６－２１</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><b>最近または以前に測られた血圧は？</b><BR />
+      <label for="h1"><INPUT type="radio" name="最近または以前に測られた血圧" value="高い" id="h1"/>高い</label>　　　<label for="h2"><INPUT type="radio" name="最近または以前に測られた血圧" value="やや高い" id="h2"/>やや高い</label>　　　<label for="h3"><INPUT type="radio" name="最近または以前に測られた血圧" value="普通" checked="checked" id="h3"/>普通</label>　　　<label for="h4"><INPUT type="radio" name="最近または以前に測られた血圧" value="やや低め" id="h4"/>やや低め</label>　　<label for="h5"><INPUT type="radio" name="最近または以前に測られた血圧" value="かなり低い" id="h5"/>かなり低い</label><BR />
+      <b>ご自分の血圧をご存知なら記入して下さい。</b>　　<BR />
+      <b>最高血圧<INPUT size="10" type="text" name="収縮期血圧（ｍｍＨｇ）" />ｍｍＨｇ</b>　　　<b>最低血圧<INPUT size="10" type="text" name="拡張期血圧（ｍｍＨｇ）" />ｍｍＨｇ</b></td>
+      </tr>
+    <tr>
+        <td>&#160;　　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">大便についての質問</font></b>　　　<b><font color="#990099">７－２１</font></b></td>
+      </tr>
+      <tr>
+        <td><label for="i1"><INPUT type="checkbox" name="大便の状態" value="便秘する" id="i1"/>便秘する</label>　　　　　<label for="i2"><INPUT type="checkbox" name="大便の状態" value="下痢気味" id="i2"/>下痢気味</label>　　　　　<label for="i3"><INPUT type="checkbox" name="大便の状態" value="軟便気味" id="i3"/>軟便気味</label>　　　　　<label for="i4"><INPUT type="checkbox" name="大便の状態" value="下痢と便秘が交互に来る" id="i4"/>下痢と便秘が交互に来る</label></td>
+      </tr>
+      <tr>
+        <td><label for="i5"><INPUT type="checkbox" name="大便の状態" value="コロコロした便が出る" id="i5"/>コロコロした便がでる</label>　　　　　<label for="i6"><INPUT type="checkbox" name="大便の状態" value="固い便が出る" id="i6"/>固い便が出る</label>　　　　　<label for="i7"><INPUT type="checkbox" name="大便の状態" value="便が細く切れ切れで出てくる" id="i7"/>便が細く切れ切れで出てくる</label></td>
+      </tr>
+      <tr>
+        <td><label for="i8"><INPUT type="checkbox" name="大便の状態" value="快適できれいな便が出る" id="i8"/>快適できれいなバナナのような便がでる</label>　　　　　<label for="i9"><INPUT type="checkbox" name="大便の状態" value="バナナのような便ではないが普通便が出る" id="i9"/>バナナのようではないが普通便が出る</label></td>
+      </tr>
+      <tr>
+        <td><label for="i10"><INPUT type="checkbox" name="大便の状態" value="粘性のある便で便器が汚れる" id="i10"/>粘性のある便で便器が汚れる</label>　　　　　<label for="i11"><INPUT type="checkbox" name="大便の状態" value="大量のガスと共に便が飛び散る" id="i11"/>大量のガスと共に便が飛び散る</label></td>
+      </tr>
+      <tr>
+        <td><label for="i47"><INPUT type="checkbox" name="大便の状態" value="トイレに行きたくなっても学校では大便は我慢する" id="i47"/>トイレに行きたくなっても学校では大便は我慢する</label></td>
+      </tr>
+      <tr>
+        <td><b><font color="#0000ff">便の色について</font></b><BR />
+      <label for="i12"><INPUT type="checkbox" name="大便の色" value="白い" id="i12"/>白い</label>　　　<label for="i13"><INPUT type="checkbox" name="大便の色" value="黄色" id="i13"/>黄色</label>　　　<label for="i14"><INPUT type="checkbox" name="大便の色" value="茶色" id="i14"/>茶色</label>　　　<label for="i15"><INPUT type="checkbox" name="大便の色" value="茶褐色" id="i15"/>茶褐色</label>　　　<label for="i16"><INPUT type="checkbox" name="大便の色" value="黒褐色" id="i16"/>黒褐色</label>　　　<label for="i17"><INPUT type="checkbox" name="大便の色" value="黒い" id="i17"/>黒い</label></td>
+      </tr>
+      <tr>
+        <td><b><font color="#0000ff">便の臭気について</font></b><BR />
+      <label for="i18"><INPUT type="checkbox" name="大便の臭い" value="あまり臭わない" id="i18"/>あまり臭わない</label>　　　<label for="i19"><INPUT type="checkbox" name="大便の色" value="食べた物の臭い" id="i19"/>食べた物の臭い</label>　　　<label for="i20"><INPUT type="checkbox" name="大便の色" value="イオウ臭（卵が腐ったような臭い）" id="i20"/>イオウ臭（卵が腐ったような臭い）</label></td>
+      </tr>
+      <tr>
+        <td><label for="i21"><INPUT type="checkbox" name="大便の色" value="公衆トイレのような臭い" id="i21"/>公衆トイレのような臭い</label>　　　<label for="i22"><INPUT type="checkbox" name="大便の色" value="特に臭いは気にならない" id="i22"/>特に臭いは気にならない</label></td>
+      </tr>
+      <tr>
+        <td><b><font color="#0000ff">便の固さについて</font></b><BR />
+      <label for="i23"><INPUT type="checkbox" name="大便の固さについて" value="かなり固い" id="i23"/>かなり固い</label>　　　<label for="i24"><INPUT type="checkbox" name="大便の固さについて" value="やや固い" id="i24"/>やや固い</label>　　　<label for="i25"><INPUT type="checkbox" name="大便の固さについて" value="ちょうどよい固さ" id="i25"/>丁度よい固さ</label>　　　<label for="i26"><INPUT type="checkbox" name="大便の固さについて" value="かろうじて形になっている" id="i26"/>かろうじて形になっている</label></td>
+      </tr>
+      <tr>
+        <td><label for="i27"><INPUT type="checkbox" name="大便の固さについて" value="形はなく潰れている" id="i27"/>形はなく潰れている</label>　　　<label for="i28"><INPUT type="checkbox" name="大便の固さについて" value="サラサラの液状" id="i28"/>サラサラの液状</label></td>
+      </tr>
+      <tr>
+        <td><b>一日の排便回数は<label for="i29"><INPUT size="5" type="text" name="一日の排便回数（回）" id="i29"/>回</label>　　　　　<label for="i30">毎日出ない場合<INPUT size="5" type="text" name="何日かに１度の排便（日）" id="i30"/>日に１回出る</label></b></td>
+      </tr>
+      <tr>
+        <td><label for="i31"><INPUT type="radio" name="下剤の使用" value="下剤を使っている" id="i31"/>下剤を使っている</label>　　　<label for="i32"><INPUT type="radio" name="下剤の使用" value="時々下剤を使っている" id="i32"/>時々下剤を使っている</label>　　　<label for="i33"><INPUT type="radio" name="下剤の使用" value="下剤は使わない" id="i33"/>下剤は使わない</label>　　　<label for="i34"><INPUT type="radio" name="下剤の使用" value="浣腸を使う" id="i34"/>浣腸を使う</label></td>
+      </tr>
+      <tr>
+        <td><label for="i35"><INPUT type="radio" name="下剤使用時" value="下剤を使うと腹痛・下痢になる" id="i35"/>下剤を使うと腹痛や下痢になる</label>　　　<label for="i36"><INPUT type="radio" name="下剤使用時" value="特に腹痛や下痢もなく出る" id="i36"/>下剤を使っても腹痛や下痢がでない</label></td>
+      </tr>
+      <tr>
+        <td><label for="i37"><INPUT type="checkbox" name="排便時の状態" value="出血する" id="i37"/>排便時に出血する</label>　　　<label for="i38"><INPUT type="checkbox" name="排便時の状態" value="肛門が痛む" id="i38"/>排便時に肛門が痛む</label>　　　<label for="i39"><INPUT type="checkbox" name="排便時の状態" value="間に合わず時々漏らすことがある" id="i39"/>トイレに間に合わず漏らすことがある</label></td>
+      </tr>
+      <tr>
+        <td><b><font color="#0000ff">痔について</font></b><BR />
+      <label for="i40"><INPUT type="checkbox" name="痔について" value="いぼ痔がある" id="i40"/>いぼ痔がある</label>　　　<label for="i41"><INPUT type="checkbox" name="痔について" value="切れ痔がある" id="i41"/>切れ痔がある</label>　　　<label for="i42"><INPUT type="checkbox" name="痔について" value="痔瘻がある" id="i42"/>痔瘻がある</label>　　　<label for="i43"><INPUT type="checkbox" name="痔について" value="脱肛になっている" id="i43"/>脱肛になっている</label><BR />
+      <label for="i44"><INPUT type="checkbox" name="痔について" value="肛門がかゆい" id="i44"/>肛門がかゆい</label>　　　<label for="i45"><INPUT type="checkbox" name="痔について" value="過去に痔の手術をした" id="i45"/>過去に痔の手術をした</label>　　　<label for="i46"><INPUT type="checkbox" name="痔について" value="医師から手術を勧められている" id="i46"/>医師から手術を勧められている</label></td>
+      </tr>
+      <tr>
+        <td><b>（a）　その他、気の付いた事があれば記入してください。</b><BR />
+      <textarea rows="4" cols="90" name="大便についてその他気付いた点"></textarea></td>
+      </tr>
+      <tr>
+        <td>&#160;　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">小便についての質問</font></b>　　　<b><font color="#990099">８－２１</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><b>小便の回数　　日中に<INPUT size="10" type="text" name="日中の小便の回数（回）" />回　　　就寝後に<INPUT size="10" type="text" name="就寝後の小便の回数（回）" />回</b></td>
+      </tr>
+      <tr>
+        <td><b>一回の排尿量は</b>　　　　<label for="j3"><INPUT type="radio" name="一回の排尿量" value="かなり多い" id="j3"/>かなり多い</label>　　　　<label for="j4"><INPUT type="radio" name="一回の排尿量" value="多い" id="j4"/>多い</label>　　　　<label for="j5"><INPUT type="radio" name="一回の排尿量" value="普通" checked="checked" id="j5"/>普通<BR /></label>
+      <label for="j1"><INPUT type="radio" name="一回の排尿量" value="少ない" id="j1"/>少ない</label>　　　　<label for="j2"><INPUT type="radio" name="一回の排尿量" value="かなり少ない" id="j2"/>かなり少ない</label></td>
+      </tr>
+      <tr>
+        <td><b>尿の色は</b>　　　　<label for="j6"><INPUT type="radio" name="尿の色" value="透明" id="j6"/>透明</label>　　　　<label for="j7"><INPUT type="radio" name="尿の色" value="薄い黄色" checked="checked" id="j7"/>うすい黄色</label>　　　　<label for="j8"><INPUT type="radio" name="尿の色" value="濃い黄色" id="j8"/>濃い黄色</label>　　　　<BR />
+      <label for="j9"><INPUT type="radio" name="尿の色" value="茶色" id="j9"/>茶色</label>　　　　<label for="j10"><INPUT type="radio" name="尿の色" value="血が混じる" id="j10"/>血が混じる</label>　　　　<label for="j11"><INPUT type="radio" name="尿の色" value="濁る" id="j11"/>濁る</label></td>
+      </tr>
+      <tr>
+        <td><label for="j12"><INPUT type="checkbox" name="排尿の状態" value="排尿後に残尿感がある" id="j12"/>排尿後に残尿感がある</label>　　　<label for="j13"><INPUT type="checkbox" name="排尿の状態" value="排尿後にしばらく痛む" id="j13"/>排尿後にしばらく痛む</label>　　　<label for="j14"><INPUT type="checkbox" name="排尿の状態" value="排尿中に痛む" id="j14"/>排尿中に痛む</label></td>
+      </tr>
+      <tr>
+        <td><label for="j15"><INPUT type="checkbox" name="排尿の状態" value="排尿に勢いがなく時間がかかる" id="j15"/>排尿に勢いがなく時間がかかる</label>　　　<label for="j16"><INPUT type="checkbox" name="排尿の状態" value="尿失禁がある" id="j16"/>尿失禁がある（無意識に漏らす　おねしょではないです）</label></td>
+      </tr>
+      <tr>
+        <td><b>（a）　「尿失禁がある」場合、どのような時に失禁するのか記入してください。</b><BR />
+      <textarea rows="3" cols="90" name="尿失禁についての詳細"></textarea></td>
+      </tr>
+      <tr>
+        <td><label for="j17"><INPUT type="checkbox" name="排尿の状態" value="排尿後の尿の切れが悪い" id="j17"/>排尿後に尿の切れが悪い</label>　　　<label for="j18"><INPUT type="checkbox" name="排尿の状態" value="夜尿症がある" id="j18"/>夜尿症がある</label>　　　<label for="j19"><INPUT type="checkbox" name="排尿の状態" value="膀胱炎をよく起こす" id="j19"/>膀胱炎をよく起こす</label></td>
+      </tr>
+      <tr>
+        <td><label for="j20"><INPUT type="checkbox" name="排尿の状態" value="尿検査で異常を指摘されている" id="j20"/>尿検査で異常を指摘される</label></td>
+      </tr>
+      <tr>
+        <td><b>（b）　「尿検査で異常がある」場合、どういう異常か詳しく記入してください。</b><BR />
+      <textarea rows="3" cols="90" name="尿検査での異常の詳細"></textarea></td>
+      </tr>
+      <tr>
+        <td><b>（c）　その他、気の付いた事があれば記入してください。</b><BR />
+      <textarea rows="4" cols="90" name="小便についてその他気の付いた事"></textarea></td>
+      </tr>
+      <tr>
+        <td>&#160;　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">冷えについての質問</font></b>　　　<b><font color="#990099">９－２１</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><b>冷えを感じる場所は？</b><BR />
+      <label for="k1"><INPUT type="checkbox" name="冷えを感じる場所" value="手" id="k1"/>手</label>　　　<label for="k2"><INPUT type="checkbox" name="冷えを感じる場所" value="足" id="k2"/>足</label>　　　<label for="k3"><INPUT type="checkbox" name="冷えを感じる場所" value="手指" id="k3"/>手指</label>　　　<label for="k4"><INPUT type="checkbox" name="冷えを感じる場所" value="足の先" id="k4"/>足の先</label>　　　<label for="k5"><INPUT type="checkbox" name="冷えを感じる場所" value="腰" id="k5"/>腰</label>　　　<label for="k6"><INPUT type="checkbox" name="冷えを感じる場所" value="太もも" id="k6"/>太もも</label>　　　<label for="k7"><INPUT type="checkbox" name="冷えを感じる場所" value="下腹" id="k7"/>下腹</label><BR />
+      <label for="k8"><INPUT type="checkbox" name="冷えを感じる場所" value="お腹全体" id="k8"/>お腹全体</label>　　　<label for="k9"><INPUT type="checkbox" name="冷えを感じる場所" value="腕" id="k9"/>腕</label>　　　<label for="k10"><INPUT type="checkbox" name="冷えを感じる場所" value="背中" id="k10"/>背中</label>　　　<label for="k11"><INPUT type="checkbox" name="冷えを感じる場所" value="首・うなじ" id="k11"/>首・うなじ</label>　　　<label for="k12"><INPUT type="checkbox" name="冷えを感じる場所" value="顔" id="k12"/>顔</label>　　　<label for="k13"><INPUT type="checkbox" name="冷えを感じる場所" value="頭" id="k13"/>頭</label>　　　<label for="k14"><INPUT type="checkbox" name="冷えを感じる場所" value="耳" id="k14"/>耳</label></td>
+      </tr>
+      <tr>
+        <td><label for="k15"><INPUT type="checkbox" name="冷えの程度" value="普段から冷え性" id="k15"/>普段から冷え性</label>　　　<label for="k16"><INPUT type="checkbox" name="冷えの程度" value="寒い時期だけ冷える" id="k16"/>寒い時期だけ冷える</label>　　　<label for="k17"><INPUT type="checkbox" name="冷えの程度" value="身体が冷えて寝にくい" id="k17"/>身体が冷えて寝にくい</label><BR />
+      <label for="k18"><INPUT type="checkbox" name="冷えの程度" value="全身的に冷える" id="k18"/>全身的に冷える</label>　　　<label for="k19"><INPUT type="checkbox" name="冷えの程度" value="風が当たるとゾクゾクする" id="k19"/>風が当たるとゾクゾクする</label>　　　<label for="k20"><INPUT type="checkbox" name="冷えの程度" value="冷え性だがそれほどひどくない" id="k20"/>冷え性だがそれほどひどくない</label></td>
+      </tr>
+      <tr>
+        <td><label for="k21"><INPUT type="checkbox" name="冷えの程度" value="夏でも厚着をしている" id="k21"/>夏でも厚着をしている</label>　　　<label for="k22"><INPUT type="checkbox" name="冷えの程度" value="夏でも靴下をはいている" id="k22"/>夏でも靴下をはいている</label>　　　<label for="k23"><INPUT type="checkbox" name="冷えの程度" value="夏でも冷房は使わない" id="k23"/>夏でも冷房は使わない</label><BR />
+      <label for="k24"><INPUT type="checkbox" name="冷えの程度" value="しもやけが出来る" id="k24"/>しもやけが出来る</label></td>
+      </tr>
+      <tr>
+        <td>しもやけの出来る部位　　　<label for="k25"><INPUT type="checkbox" name="しもやけの出来る部位" value="足" id="K25"/>足</label>　　　<label for="k26"><INPUT type="checkbox" name="しもやけの出来る部位" value="手" id="k26"/>手</label>　　　<label for="k27"><INPUT type="checkbox" name="しもやけの出来る部位" value="耳" id="k27"/>耳</label>　　　<label for="k28"><INPUT type="checkbox" name="しもやけの出来る部位" value="鼻" id="k28"/>鼻</label>　　　その他<INPUT size="15" type="text" name="しもやけの出来る部位　その他" /></td>
+      </tr>
+      <tr>
+        <td><b>（a）　その他、気の付いた事があれば記入してください。</b><BR />
+      <textarea rows="4" cols="90" name="その他冷えについて気付いた事"></textarea></td>
+      </tr>
+      <tr>
+        <td>&#160;　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">ほてりについての質問</font></b>　　<b><font color="#990099">１０－２１</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><label for="l1"><INPUT type="checkbox" name="ほてりの状態" value="寝るときに足の裏が熱い" id="l1"/>寝るときに足の裏が熱い</label>　　　<label for="l2"><INPUT type="checkbox" name="ほてりの状態" value="いつも手足が熱い" id="l2"/>いつも手足が熱い</label>　　　<label for="l3"><INPUT type="checkbox" name="ほてりの状態" value="身体か熱い" id="l3"/>身体が熱い</label>　　　<label for="l4"><INPUT type="checkbox" name="ほてりの状態" value="背中が熱い" id="l4"/>背中が熱い</label></td>
+      </tr>
+      <tr>
+        <td><label for="l5"><INPUT type="checkbox" name="ほてりの状態" value="上半身が熱い" id="l5"/>上半身が熱い</label>　　　　<label for="l6"><INPUT type="checkbox" name="ほてりの状態" value="顔が熱い" id="l6"/>顔が熱い</label>　　　<label for="l7"><INPUT type="checkbox" name="ほてりの状態" value="足は冷えるが顔はほてる" id="l7"/>足は冷えるが顔はほてる</label></td>
+      </tr>
+      <tr>
+        <td><label for="l8"><INPUT type="checkbox" name="ほてりの状態" value="緊張すると顔がほてる" id="l8"/>緊張すると顔がほてる</label>　　　<label for="l9"><INPUT type="checkbox" name="ほてりの状態" value="人前に出ると顔がほてる" id="l9"/>人前に出ると顔がほてる</label></td>
+      </tr>
+      <tr>
+        <td><label for="l10"><INPUT type="checkbox" name="ほてりの状態" value="食事をすると頭や顔から汗が噴き出す" id="l10"/>食事をすると頭や顔から汗が噴き出す</label>　　　<label for="l11"><INPUT type="checkbox" name="ほてりの状態" value="急に熱くなったり寒くなったりする" id="l11"/>急に熱くなったり寒くなったりする</label></td>
+      </tr>
+      <tr>
+        <td><b>（a）　その他、気の付いた事があれば記入してください。</b><BR />
+      <textarea rows="4" cols="90" name="その他ほてりについて気付いた事"></textarea></td>
+      </tr>
+      <tr>
+        <td>&#160;　　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">むくみについての質問</font></b>　　<b><font color="#990099">１１－２１</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><label for="m1"><INPUT type="radio" name="むくみについて" value="よくむくむ" id="m1"/>よくむくむ</label>　　　　<label for="m2"><INPUT type="radio" name="むくみについて" value="時々むくむ" id="m2"/>時々むくむ</label>　　　　<label for="m3"><INPUT type="radio" name="むくみについて" value="年に数回程度むくむぐらい" id="m3"/>年に数回程度むくむぐらい</label>　　　　<label for="m4"><INPUT type="radio" checked="checked" name="むくみについて" value="むくまない" id="m4"/>むくまない</label></td>
+      </tr>
+      <tr>
+        <td><b>むくむ場所を指で強く押したとき</b><BR />
+      <label for="m5"><INPUT type="radio" name="むくむ場所の圧迫" value="凹んだ場所が直ぐにもどる" checked="checked" id="m5"/>凹んだところが直ぐにもどる</label>　　　　　<label for="m6"><INPUT type="radio" name="むくむ場所の圧迫" value="凹んで場所が直ぐにもどらない" id="m6"/>凹んだ場所が直ぐにもどらない</label></td>
+      </tr>
+      <tr>
+        <td><b>（a）　むくむ部位・時間帯・むくむ部位の移動などを、詳しく記入して下さい。</b><BR />
+      <textarea rows="4" cols="90" name="むくむ部位・時間帯・むくむ部位の移動などの詳細"></textarea></td>
+      </tr>
+      <tr>
+        <td>&#160;　　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">頭部・顔面についての質問</font></b>　　<b><font color="#990099">１２－２１</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><label for="n1"><INPUT type="checkbox" name="頭部・顔面について" value="よく頭痛がする" id="n1"/>よく頭痛がする</label>　　　　<label for="n2"><INPUT type="checkbox" name="頭部・顔面について" value="ズキズキとは痛まないが頭が痛い" id="n2"/>ズキズキとは痛まないが頭が痛い</label>　　　　<label for="n3"><INPUT type="checkbox" name="頭部・顔面について" value="痛くはないがモヤモヤする" id="n3"/>痛くはないがモヤモヤする</label></td>
+      </tr>
+      <tr>
+        <td><label for="n4"><INPUT type="checkbox" name="頭部・顔面について" value="帽子をかぶっているような感じがする" id="n4"/>帽子をかぶっているような感じがする</label>　　　　<label for="n5"><INPUT type="checkbox" name="頭部・顔面について" value="締め付けられるような痛みがある" id="n5"/>締め付けられるような痛みがある</label></td>
+      </tr>
+      <tr>
+        <td><label for="n6"><INPUT type="checkbox" name="頭部・顔面について" value="ズキズキと拍動性のある痛み" id="n6"/>ズキズキと拍動性のある痛み</label>　　　　<label for="n7"><INPUT type="checkbox" name="頭部・顔面について" value="頭痛がひどくて吐くことがある" id="n7"/>頭痛がひどくて吐くことがある</label></td>
+      </tr>
+      <tr>
+        <td><label for="n8"><INPUT type="checkbox" name="頭部・顔面について" value="フケが多い" id="n8"/>フケが多い</label>　　　　<label for="n9"><INPUT type="checkbox" name="頭部・顔面について" value="頭皮に皮膚炎がある" id="n9"/>頭皮に皮膚炎がある</label>　　　　<label for="n10"><INPUT type="checkbox" name="頭部・顔面について" value="抜け毛が多い" id="n10"/>抜け毛が多い</label>　　　　<label for="n11"><INPUT type="checkbox" name="頭部・顔面について" value="髪の毛が薄くなってきた" id="n11" />髪の毛が薄くなってきた</label></td>
+      </tr>
+      <tr>
+        <td><label for="n12"><INPUT type="checkbox" name="頭部・顔面について" value="部分的にハゲができている" id="n12"/>部分的にハゲができている</label>　　　　<label for="n13"><INPUT type="checkbox" name="頭部・顔面について" value="頭がかゆい" id="n13"/>頭がかゆい</label>　　　　<label for="n14"><INPUT type="checkbox" name="頭部・顔面について" value="頭皮がピリピリと痛む" id="n14"/>頭皮がピリピリと痛む</label></td>
+      </tr>
+      <tr>
+        <td><label for="n15"><INPUT type="checkbox" name="頭部・顔面について" value="よくのぼせる" id="n15"/>よくのぼせる</label>　　　　<label for="n16"><INPUT type="checkbox" name="頭部・顔面について" value="回転性のめまいがある" id="n16"/>回転性のめまいがある</label>　　　　<label for="n17"><INPUT type="checkbox" name="頭部・顔面について" value="フワフワと雲の上に居るような感じがする" id="n17"/>フワフワと雲の上に居るような感じ</label></td>
+      </tr>
+      <tr>
+        <td><label for="n18"><INPUT type="checkbox" name="頭部・顔面について" value="立ちくらみがする" id="n18"/>立ちくらみがする</label>　　　　<label for="n19"><INPUT type="checkbox" name="頭部・顔面について" value="寝て起きた時にめまいやふらつきがある" id="n19"/>寝て起きた時にめまいやふらつきがある</label></td>
+      </tr>
+      <tr>
+        <td><label for="n20"><INPUT type="checkbox" name="頭部・顔面について" value="ひえのぼせがある" id="n20"/>冷えのぼせがある</label>　　　　<label for="n21"><INPUT type="checkbox" name="頭部・顔面について" value="まぶたや目尻がピクピクとけいれんする" id="n21"/>まぶたや目尻がピクピクとけいれんする</label></td>
+      </tr>
+      <tr>
+        <td><label for="n22"><INPUT type="checkbox" name="頭部・顔面について" value="口元や頬がピクピクけいれんする" id="n22"/>口元や頬がピクピクけいれんする</label>　　　　<label for="n23"><INPUT type="checkbox" name="頭部・顔面について" value="頭や顔から直ぐに汗が噴き出す" id="n23"/>頭や顔からすぐに汗が噴き出す</label></td>
+      </tr>
+      <tr>
+        <td><label for="n24"><INPUT type="checkbox" name="頭部・顔面について" value="ニキビ・吹き出物がよくできる" id="n24"/>ニキビ・吹き出物がよくできる</label>　　　　<label for="n25"><INPUT type="checkbox" name="頭部・顔面について" value="まぶたや顔がむくみやすい" id="n25"/>まぶたや顔がむくみやすい</label></td>
+      </tr>
+      <tr>
+        <td><b><font color="#000000">（a）　痛む場所や時間帯・痛み方、例えば「夕方になると後頭部が重だるく痛む」とか、<BR />
+      また他に気が付いた事があれば詳しく記入してください。</font></b><br />
+        <textarea rows="4" cols="90" name="その他頭部・顔面について気付いた事及び詳細"></textarea><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td>&#160;　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">目についての質問</font></b>　　<b><font color="#990099">１３－２１</font></b></td>
+      </tr>
+      <tr>
+        <td><label for="o1"><INPUT type="checkbox" name="目について" value="充血する" id="o1"/>充血する</label>　　　　<label for="o2"><INPUT type="checkbox" name="目について" value="かすむ" id="o2"/>かすむ</label>　　　　<label for="o3"><INPUT type="checkbox" name="目について" value="痛む" id="o3"/>痛む</label>　　　　<label for="o4"><INPUT type="checkbox" name="目について" value="コロコロする" id="o4"/>コロコロする</label>　　　　<label for="o5"><INPUT type="checkbox" name="目について" value="涙があふれる" id="o5"/>涙があふれる</label></td>
+      </tr>
+      <tr>
+        <td><label for="o6"><INPUT type="checkbox" name="目について" value="かゆい" id="o6"/>かゆい</label>　　　　<label for="o7"><INPUT type="checkbox" name="目について" value="白目が出血して赤くなっている" id="o7"/>白目が出血して赤くなっている</label>　　　　<label for="o8"><INPUT type="checkbox" name="目について" value="乾燥する" id="o8"/>乾燥する</label>　　　　<label for="o9"><INPUT type="checkbox" name="目について" value="まぶしい" id="o9"/>まぶしい</label></td>
+      </tr>
+      <tr>
+        <td><label for="o10"><INPUT type="checkbox" name="目について" value="目が疲れる" id="o10"/>目が疲れる</label>　　　　<label for="o11"><INPUT type="checkbox" name="目について" value="視力が悪くなってきた" id="o11"/>視力が悪くなってきた</label>　　　　<label for="o12"><INPUT type="checkbox" name="目について" value="目の奥が痛む" id="o12"/>目の奥が痛む</label>　　　　<label for="o13"><INPUT type="checkbox" name="目について" value="目やにが多い" id="o13"/>目やにが多い</label></td>
+      </tr>
+      <tr>
+        <td><label for="o14"><INPUT type="checkbox" name="目について" value="目の下・目の周りが黒い" id="o14"/>目の下・目の周りが黒い</label>　　　　<label for="o15"><INPUT type="checkbox" name="目について" value="目の前に虫が飛ぶような感じがする" id="o15"/>目の前に虫が飛ぶような感じがする</label></td>
+      </tr>
+      <tr>
+        <td><label for="o16"><INPUT type="checkbox" name="目について" value="目の焦点が合いにくい" id="o16"/>目の焦点が合いにくい</label>　　　　<label for="o17"><INPUT type="checkbox" name="目について" value="視野がかけたり歪に見える" id="o17"/>視野が欠けたり歪に見える</label>　　　　<label for="o18"><INPUT type="checkbox" name="目について" value="アレルギー性の結膜炎がある" id="o18"/>アレルギー性結膜炎がある</label></td>
+      </tr>
+      <tr>
+        <td><label for="o19"><INPUT type="checkbox" name="目について" value="先天的な目の疾患がある" id="o19"/><b>先天的な目の疾患がある</b></label>　　「病名は」<INPUT size="30" type="text" name="先天的な目の疾患　病名" /></td>
+      </tr>
+      <tr>
+        <td><b><font color="#000000">（a）　その他、気の付いた事があれば記入してください。</font></b><BR />
+      <textarea rows="4" cols="90" name="目についてその他、気の付いた事"></textarea></td>
+      </tr>
+      <tr>
+        <td>&#160;　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">耳・鼻についての質問</font></b>　　<b><font color="#990099">１４－２１</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><label for="p1"><INPUT type="checkbox" name="耳について" value="高い音の耳鳴りがする" id="p1"/>高い音の耳鳴りがする</label>　　　　<label for="p2"><INPUT type="checkbox" name="耳について" value="低い音の耳鳴りがする" id="p2"/>低い音の耳鳴りがする</label>　　　　<label for="p3"><INPUT type="checkbox" name="耳について" value="大きな音の耳鳴りがする" id="p3"/>大きな音の耳鳴りがする</label></td>
+      </tr>
+      <tr>
+        <td><label for="p4"><INPUT type="checkbox" name="耳について" value="耳鳴りが気にならない時もある" id="p4"/>耳鳴りが気にならない時もある</label>　　　　<label for="p5"><INPUT type="checkbox" name="耳について" value="アブラゼミが鳴くような耳鳴りがする" id="p5"/>アブラゼミが鳴くような耳鳴りがする</label></td>
+      </tr>
+      <tr>
+        <td><label for="p6"><INPUT type="checkbox" name="耳について" value="耳が聞こえにくい" id="p6"/>耳が聞こえにくい</label>　　　　<label for="p7"><INPUT type="checkbox" name="耳について" value="耳が塞がったような感じがする（耳閉感）" id="p7"/>耳が塞がったような感じがする（耳閉感）</label></td>
+      </tr>
+      <tr>
+        <td><label for="p8"><INPUT type="checkbox" name="耳について" value="自分の声が耳の中で反響する" id="p8"/>自分の声が耳の中で反響する</label>　　　　<label for="p9"><INPUT type="checkbox" name="耳について" value="寝るときに心臓の鼓動が聞こえる" id="p9"/>寝るときに心臓の鼓動が聞こえる</label></td>
+      </tr>
+      <tr>
+        <td><label for="p10"><INPUT type="checkbox" name="耳について" value="耳だれが出る" id="p10"/>耳だれが出る</label>　　　　<label for="p11"><INPUT type="checkbox" name="耳について" value="耳の穴がかゆい" id="p11"/>耳の穴がかゆい</label>　　　　<label for="p12"><INPUT type="checkbox" name="耳について" value="耳垢が湿っている" id="p12"/>耳垢が湿っている</label>　　　　<label for="p13"><INPUT type="checkbox" name="耳について" value="毎日耳垢を取る" id="p13"/>毎日耳垢をとる</label></td>
+      </tr>
+      <tr>
+        <td><label for="p14"><INPUT type="checkbox" name="鼻について" value="鼻汁が出る" id="p14"/>鼻汁が出る</label></td>
+      </tr>
+      <tr>
+        <td><b>鼻汁の色は？</b><BR />
+      <label for="p15"><INPUT type="checkbox" name="鼻汁の色" value="透明" id="p15"/>透明</label>　　　　　<label for="p16"><INPUT type="checkbox" name="鼻汁の色" value="白っぽい" id="p16"/>白っぽい</label>　　　　　<label for="p17"><INPUT type="checkbox" name="鼻汁の色" value="乳白色" id="p17"/>乳白色</label>　　　　　<label for="p18"><INPUT type="checkbox" name="鼻汁の色" value="黄色" id="p18"/>黄色</label>　　　　　<label for="p19"><INPUT type="checkbox" name="鼻汁の色" value="黄緑色" id="p19"/>黄緑色</label><BR />
+      <label for="p20"><INPUT type="checkbox" name="鼻汁の色" value="茶色" id="p20"/>茶色</label>　　　　　<label for="p21"><INPUT type="checkbox" name="鼻汁の色" value="血が混じる" id="p21"/>血が混じる</label></td>
+      </tr>
+      <tr>
+        <td><b>鼻汁の粘度は？</b><BR />
+      <label for="p22"><INPUT type="checkbox" name="鼻汁の粘度" value="サラサラ" id="p22"/>サラサラ</label>　　　　　<label for="p23"><INPUT type="checkbox" name="鼻汁の粘度" value="少し粘っこい" id="p23"/>少し粘っこい</label>　　　　　<label for="p24"><INPUT type="checkbox" name="鼻汁の粘度" value="粘っこい" id="p24"/>粘っこい</label>　　　　　<label for="p25"><INPUT type="checkbox" name="鼻汁の粘度" value="かなり粘っこい" id="p25"/>かなり粘っこい</label><BR />
+      <label for="p26"><INPUT type="checkbox" name="鼻汁の粘度" value="塊になって出てくる" id="p26"/>塊になって出てくる</label></td>
+      </tr>
+      <tr>
+        <td><label for="p27"><INPUT type="checkbox" name="鼻の状態" value="くしゃみが出る" id="p27"/>クシャミが出る</label>　　　　<label for="p28"><INPUT type="checkbox" name="鼻の状態" value="鼻がつまる" id="p28"/>鼻がつまる</label><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><b>クシャミが出たり、鼻がつまったり、鼻汁が出る時間帯は？</b><BR />
+      <label for="p29"><INPUT type="checkbox" name="クシャミ・鼻づまり・鼻汁の出る時間帯" value="朝起きた時" id="p29"/>朝起きた時</label>　　　<label for="p30"><INPUT type="checkbox" name="クシャミ・鼻づまり・鼻汁の出る時間帯" value="朝から昼にかけて" id="p30"/>朝から昼にかけて</label>　　　<label for="p31"><INPUT type="checkbox" name="クシャミ・鼻づまり・鼻汁の出る時間帯" value="昼から夕方にかけて" id="p31"/>昼から夕方にかけて</label>　　　<label for="p32"><INPUT type="checkbox" name="クシャミ・鼻づまり・鼻汁の出る時間帯" value="夕方から就寝時" id="p32"/>夕方から就寝時</label><BR />
+      <label for="p33"><INPUT type="checkbox" name="クシャミ・鼻づまり・鼻汁の出る時間帯" value="朝と夕方" id="p33"/>朝と夕方</label>　　　<label for="p34"><INPUT type="checkbox" name="クシャミ・鼻づまり・鼻汁の出る時間帯" value="一日中起きている間" id="p34"/>一日中起きている間</label>　　　<label for="p35"><INPUT type="checkbox" name="クシャミ・鼻づまり・鼻汁の出る時間帯" value="就寝中も苦しくて起きる" id="p35"/>就寝中も苦しくて起きる事がある</label></td>
+      </tr>
+      <tr>
+        <td><label for="p36"><INPUT type="checkbox" name="鼻の症状" value="鼻汁が臭う" id="p36"/>鼻汁が臭う</label>　　　<label for="p37"><INPUT type="checkbox" name="鼻の症状" value="鼻息が臭う" id="p37"/>鼻息が臭う</label>　　　<label for="p38"><INPUT type="checkbox" name="鼻の症状" value="蓄膿症" id="p38"/>蓄膿症（慢性副鼻腔炎）</label>　　　<label for="p39"><INPUT type="checkbox" name="鼻の症状" value="においがわからない" id="p39"/>においがわからない</label></td>
+      </tr>
+      <tr>
+        <td><label for="p40"><INPUT type="checkbox" name="鼻の症状" value="鼻をかんでも鼻汁が出ない" id="p40"/>鼻をかんでも鼻汁が出ない</label>　　　　<label for="p41"><INPUT type="checkbox" name="鼻の症状" value="鼻をかむと血が混じる" id="p41"/>鼻をかむと血が混じる</label>　　　　<label for="p42"><INPUT type="checkbox" name="鼻の症状" value="鼻血がよくでる" id="p42"/>鼻血がよくでる</label></td>
+      </tr>
+      <tr>
+        <td><label for="p43"><INPUT type="checkbox" name="鼻の症状" value="からだを横にすると鼻がつまる" id="p43"/>からだを横にすると鼻がつまる</label>　　　　<label for="p44"><INPUT type="checkbox" name="鼻の症状" value="鼻汁が喉の方へ落ちている（後鼻漏）" id="p44"/>鼻汁が喉の方へ落ちている（後鼻漏）</label></td>
+      </tr>
+      <tr>
+        <td><label for="p47"><INPUT type="checkbox" name="鼻の症状" value="鼻の穴がかゆい" id="p47"/>鼻の穴がかゆい</label>　　　　<label for="p48"><INPUT type="checkbox" name="鼻の症状" value="鏡で見ると鼻全体が赤い" id="p48"/>鏡で見ると鼻全体が赤い（飲酒に関係なく）</label>　</td>
+      </tr>
+      <tr>
+        <td><label for="p48"></label><label for="p49"><INPUT type="checkbox" name="鼻の症状" value="鼻茸ができている" id="p49"/>鼻茸ができている</label>　　　<label for="p50"><INPUT type="checkbox" name="鼻の症状" value="鼻の穴が乾燥する" id="p50"/>鼻の穴が乾燥する</label></td>
+      </tr>
+      <tr>
+        <td><b>（a）　その他、気の付いた事があれば記入してください。</b><BR />
+      <textarea rows="4" cols="90" name="耳・鼻について気が付いた事"></textarea></td>
+      </tr>
+      <tr>
+        <td>&#160;　　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">口腔（口の中）・咽喉（のど）についての質問</font></b>　　<b><font color="#990099">１５－２１</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><label for="q1"><INPUT type="checkbox" name="口腔・咽喉について" value="のどが渇く" id="q1"/>のどが渇く</label>　　　<label for="q2"><INPUT type="checkbox" name="口腔・咽喉について" value="水分は欲しくないがのどが渇く" id="q2"/>水分は欲しくないがのどが渇く</label>　　　<label for="q3"><INPUT type="checkbox" name="口腔・咽喉について" value="口の中が苦い感じ" id="q3"/>口の中が苦く感じる</label></td>
+      </tr>
+      <tr>
+        <td><label for="q4"><INPUT type="checkbox" name="口腔・咽喉について" value="口の中が塩辛い" id="q4"/>口の中が塩辛く感じる</label>　　　<label for="q5"><INPUT type="checkbox" name="口腔・咽喉について" value="口の中が酸っぱい" id="q5"/>口の中が酸っぱく感じる</label>　　　<label for="q6"><INPUT type="checkbox" name="口腔・咽喉について" value="口の中が甘い" id="q6"/>口の中が甘く感じる</label></td>
+      </tr>
+      <tr>
+        <td><label for="q7"><INPUT type="checkbox" name="口腔・咽喉について" value="口臭がある" id="q7"/>口臭がある</label>　　　<label for="q8"><INPUT type="checkbox" name="口腔・咽喉について" value="口の中がネバネバする" id="q8"/>口の中がネバネバする</label>　　　<label for="q9"><INPUT type="checkbox" name="口腔・咽喉について" value="唾液が出すぎる" id="q9"/>唾液が出すぎる</label>　　　<label for="q10"><INPUT type="checkbox" name="口腔・咽喉について" value="口の中が乾く" id="q10"/>口の中が乾燥する</label></td>
+      </tr>
+      <tr>
+        <td><label for="q11"><INPUT type="checkbox" name="口腔・咽喉について" value="口の中が熱く感じる" id="q11"/>口の中が熱く感じる</label>　　　<label for="q12"><INPUT type="checkbox" name="口腔・咽喉について" value="歯肉炎がある" id="q12"/>歯肉炎がある</label>　　　<label for="q13"><INPUT type="checkbox" name="口腔・咽喉について" value="歯槽膿漏になっている" id="q13"/>歯槽膿漏になっている</label></td>
+      </tr>
+      <tr>
+        <td><label for="q14"><INPUT type="checkbox" name="口腔・咽喉について" value="虫歯がある" id="q14"/>虫歯がある</label>　　　<label for="q15"><INPUT type="checkbox" name="口腔・咽喉について" value="口内炎ができやすい" id="q15"/>口内炎ができやすい</label>　　　<label for="q16"><INPUT type="checkbox" name="口腔・咽喉について" value="口角炎ができやすい" id="q16"/>口角炎ができやすい</label>　　　<label for="q17"><INPUT type="checkbox" name="口腔・咽喉について" value="唇が乾燥する" id="q17"/>口唇が乾燥する</label></td>
+      </tr>
+      <tr>
+        <td><label for="q18"><INPUT type="checkbox" name="口腔・咽喉について" value="のどが痛む" id="q18"/>のどが痛い</label>　　　<label for="q19"><INPUT type="checkbox" name="口腔・咽喉について" value="のどが詰まる（異物感がある）" id="q19"/>のどが詰まる（異物感がある）</label>　　　<label for="q20"><INPUT type="checkbox" name="口腔・咽喉について" value="声が枯れる" id="q20"/>声が枯れる</label>　　　<label for="q21"><INPUT type="checkbox" name="口腔・咽喉について" value="食後に痰が出る" id="q21"/>食後に痰が出る</label></td>
+      </tr>
+      <tr>
+        <td><label for="q22"><INPUT type="checkbox" name="口腔・咽喉について" value="扁桃腺がすぐに腫れる" id="q22"/>扁桃腺がすぐに腫れる</label>　　　<label for="q23"><INPUT type="checkbox" name="口腔・咽喉について" value="扁桃腺を切除した" id="q23"/>扁桃腺を切除した</label>　　　<label for="q24"><INPUT type="checkbox" name="口腔・咽喉について" value="朝起きるとのどが痛い" id="q24"/>朝起きるとのどが痛い</label></td>
+      </tr>
+      <tr>
+        <td><label for="q25"><INPUT type="checkbox" name="口腔・咽喉について" value="膿栓が出る" id="q25"/>膿栓が出る</label>　　　　<label for="q26"><INPUT type="checkbox" name="口腔・咽喉について" value="過去に膿栓が出ていた" id="q26"/>過去に膿栓が出ていた</label></td>
+      </tr>
+      <tr>
+        <td><b>膿栓の色は？</b><BR />
+      <label for="q27"><INPUT type="checkbox" name="膿栓の色" value="白い" id="q27"/>白い</label>　　　<label for="q28"><INPUT type="checkbox" name="膿栓の色" value="乳白色" id="q28"/>乳白色</label>　　　<label for="q29"><INPUT type="checkbox" name="膿栓の色" value="黄色い" id="q29"/>黄色い</label>　　　<label for="q30"><INPUT type="checkbox" name="膿栓の色" value="茶色い" id="q30"/>茶色い</label>　　　<label for="q31"><INPUT type="checkbox" name="膿栓の色" value="ねずみ色" id="q31"/>ねずみ色</label>　　　その他<INPUT size="10" type="text" name="膿栓の色は（色）" />色</td>
+      </tr>
+      <tr>
+        <td><b>膿栓が出る頻度は？</b><BR />
+      <label for="q32"><INPUT type="checkbox" name="膿栓が出る頻度" value="毎日出る" id="q32"/>毎日出る</label>　　　<label for="q33"><INPUT type="checkbox" name="膿栓が出る頻度" value="２～３日に一回" id="q33"/>２～３日に一回</label>　　　<label for="q34"><INPUT type="checkbox" name="膿栓が出る頻度" value="週に一回程度" id="q34"/>週に一回程度</label>　　　<label for="q35"><INPUT type="checkbox" name="膿栓が出る頻度" value="月に１～２回" id="q35"/>月に１～２回程度</label><BR />
+      <label for="q36"><INPUT type="checkbox" name="膿栓が出る頻度" value="半年に数回程度" id="q36"/>半年に数回程度</label>　　　<label for="q37"><INPUT type="checkbox" name="膿栓が出る頻度" value="年に数回程度" id="q37"/>年に数回程度</label>　　　<label for="q38"><INPUT type="checkbox" name="膿栓が出る頻度" value="膿栓があっても出てこない" id="q38"/>膿栓があっても出てこない</label></td>
+      </tr>
+      <tr>
+        <td><b><font color="#009900">☆膿栓と言うのは、喉の奥の方から出てくるカスのようなもので、指でつぶして匂いを嗅ぐと強烈な匂いを発するものです。咳払いをしたときに自然と出てくることが少なくありません。</font></b></td>
+      </tr>
+      <tr>
+        <td>&#160;　　　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">咳についての質問　（咳が出る方のみ記入）</font></b>　　<b><font color="#990099">１６－２１</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><b>咳の質について</b><BR />
+      <label for="r1"><INPUT type="checkbox" name="咳の質について" value="痰のからんだ重たい咳" id="r1"/>痰のからんだ重たい咳</label>　　　　<label for="r2"><INPUT type="checkbox" name="咳の質について" value="コンコンと乾いた咳" id="r2"/>コンコンと乾いた咳</label>　　　　<label for="r3"><INPUT type="checkbox" name="咳の質について" value="咳き込むと止まらない" id="r3"/>咳き込むと止まらない</label><BR />
+      <label for="r4"><INPUT type="checkbox" name="咳の質について" value="咳き込むと止まらないが痰が出ると止まる" id="r4"/>咳き込むと止まらないが痰が出ると止まる</label>　　　　<label for="r5"><INPUT type="checkbox" name="咳の質について" value="気管がこそばくなって咳が出る" id="r5"/>気管がこそばくなって咳が出る</label><BR />
+      <label for="r6"><INPUT type="checkbox" name="咳の質について" value="咳き込んで嘔吐する" id="r6"/>咳き込んで嘔吐する</label>　　　　<label for="r7"><INPUT type="checkbox" name="咳の質について" value="咳き込んでいるときにのどが鳴る" id="r7"/>咳き込んでいるときにのどが鳴る</label></td>
+      </tr>
+      <tr>
+        <td><b>咳が出る時間帯について</b><BR />
+      <label for="r8"><INPUT type="checkbox" name="咳が出る時間帯" value="起床時に出る" id="r8"/>起床時に出る</label>　　　　<label for="r9"><INPUT type="checkbox" name="咳が出る時間帯" value="朝に多く出る" id="r9"/>朝に多く出る</label>　　　　<label for="r10"><INPUT type="checkbox" name="咳が出る時間帯" value="午前中に多い" id="r10"/>午前中に多い</label>　　　　<label for="r11"><INPUT type="checkbox" name="咳が出る時間帯" value="昼から多くなる" id="r11"/>昼から多くなる</label><BR />
+      <label for="r12"><INPUT type="checkbox" name="咳が出る時間帯" value="夕方から夜にかけて出る" id="r12"/>夕方から夜にかけて出る</label>　　　　<label for="r13"><INPUT type="checkbox" name="咳が出る時間帯" value="夕方から就寝するまで出る" id="r13"/>夕方から就寝するまで出る</label>　　　　<label for="r14"><INPUT type="checkbox" name="咳が出る時間帯" value="寝床に入ると出る" id="r14"/>寝床に入ると出る</label><BR />
+      <label for="r15"><INPUT type="checkbox" name="咳が出る時間帯" value="就寝してから咳で目が覚める" id="r15"/>就寝してから咳で目が覚める</label>　　　　<label for="r16"><INPUT type="checkbox" name="咳が出る時間帯" value="緊張すると咳が出る" id="r16"/>緊張すると咳が出る</label>　　　　<label for="r17"><INPUT type="checkbox" name="咳が出る時間帯" value="周りの気温が変わると咳が出る" id="r17"/>周りの気温が変わると出る</label></td>
+      </tr>
+      <tr> 
+        <td><b>痰の量について</b><BR />
+      <label for="r18"><INPUT type="checkbox" name="痰の量" value="かなり多い" id="r18"/>かなり多い</label>　　　<label for="r19"><INPUT type="checkbox" name="痰の量" value="多い" id="r19"/>多い</label>　　　<label for="r20"><INPUT type="checkbox" name="痰の量" value="やや少ない" id="r20"/>やや少ない</label>　　　<label for="r21"><INPUT type="checkbox" name="痰の量" value="少ない" id="r21"/>少ない</label>　　　<label for="r22"><INPUT type="checkbox" name="痰の量" value="全くない" id="r22"/>全くない</label></td>
+      </tr>
+      <tr>
+        <td><b>痰の色について</b><BR />
+      <label for="r23"><INPUT type="checkbox" name="痰の色" value="水のように透明" id="r23"/>水のように透明</label>　　　<label for="r24"><INPUT type="checkbox" name="痰の色" value="透明だが泡立っている" id="r24"/>透明だが泡立っている</label>　　　<label for="r25"><INPUT type="checkbox" name="痰の色" value="白っぽい" id="r25"/>白っぽい</label>　　　<label for="r26"><INPUT type="checkbox" name="痰の色" value="乳白色" id="r26"/>乳白色</label><BR />
+      <label for="r27"><INPUT type="checkbox" name="痰の色" value="黄色い" id="r27"/>黄色い</label>　　　<label for="r28"><INPUT type="checkbox" name="痰の色" value="黄緑色" id="r28"/>黄緑色</label>　　　<label for="r29"><INPUT type="checkbox" name="痰の色" value="茶色" id="r29"/>茶色</label>　　　<label for="r30"><INPUT type="checkbox" name="痰の色" value="ピンク色" id="r30"/>ピンク色</label>　　　<label for="r31"><INPUT type="checkbox" name="痰の色" value="血が混じる" id="r31"/>血が混じる</label></td>
+      </tr>
+      <tr>
+        <td><b>痰の粘度について</b><BR />
+      <label for="r32"><INPUT type="checkbox" name="痰の粘度" value="水のようにサラサラしている" id="r32"/>水のようにサラサラしている</label>　　　<label for="r33"><INPUT type="checkbox" name="痰の粘度" value="少し粘り気がある" id="r33"/>少し粘り気がある</label>　　　<label for="r34"><INPUT type="checkbox" name="痰の粘度" value="ネバネバする" id="r34"/>ネバネバする</label><BR />
+      <label for="r35"><INPUT type="checkbox" name="痰の粘度" value="水っぽい痰の中に塊がある" id="r35"/>水っぽい痰の中に塊がある</label>　　　<label for="r36"><INPUT type="checkbox" name="痰の粘度" value="軟らかいゴムのような塊" id="r36"/>軟らかいゴムのような塊</label></td>
+      </tr>
+      <tr>
+        <td><b>痰の切れ方について</b><BR />
+      <label for="r37"><INPUT type="checkbox" name="痰の切れ方" value="容易にキレる" id="r37"/>容易に切れる</label>　　　<label for="r38"><INPUT type="checkbox" name="痰の切れ方" value="何とか切れる" id="r38"/>何とか切れる</label>　　　<label for="r39"><INPUT type="checkbox" name="痰の切れ方" value="全く切れない" id="r39"/>全く切れない</label>　　　<label for="r40"><INPUT type="checkbox" name="痰の切れ方" value="痰を出すのが苦手" id="r40"/>痰を出すのが苦手</label></td>
+      </tr>
+      <tr>
+        <td><font color="#000000"><b>（a）　その他、気の付いた事があれば記入してください。</b></font><BR />
+      <textarea rows="4" cols="90" name="咳についてその他気になった事"></textarea></td>
+      </tr>
+      <tr>
+        <td>&#160;　　　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">首・背中・肩についての質問</font></b>　　<b><font color="#990099">１７－２１</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><label for="s1"><INPUT type="checkbox" name="首・背中・肩について" value="肩がこる" id="s1"/>肩がこる</label>　　　　　<label for="s2"><INPUT type="checkbox" name="首・背中・肩について" value="肩が痛む" id="s2"/>肩が痛む</label>　　　　<label for="s3"><INPUT type="checkbox" name="首・背中・肩について" value="首がこる" id="s3"/>首がこる</label>　　　　<label for="s5"><INPUT type="checkbox" name="首・背中・肩について" value="首が痛む" id="s5"/>首が痛む</label><BR />
+      <label for="s6"><INPUT type="checkbox" name="首・背中・肩について" value="背中がこる" id="s6"/>背中がこる</label>　　　　<label for="s7"><INPUT type="checkbox" name="首・背中・肩について" value="背中が痛む" id="s7"/>背中が痛む</label></td>
+      </tr>
+      <tr>
+        <td><label for="s8"><INPUT type="checkbox" name="首・背中・肩について" value="背中が冷たい" id="s8"/>背中が冷たい</label>　　　<label for="s9"><INPUT type="checkbox" name="首・背中・肩について" value="背中が熱い" id="s9"/>背中が熱い</label>　　　<label for="s10"><INPUT type="checkbox" name="首・背中・肩について" value="背中が張っている" id="s10"/>背中が張っている</label><BR />
+      <label for="s11"><INPUT type="checkbox" name="首・背中・肩について" value="背筋がよくこむら返りを起こす" id="s11"/>背筋がよくこむら返りを起こす</label></td>
+      </tr>
+      <tr>
+        <td><label for="s12"><INPUT type="checkbox" name="首・背中・肩について" value="直立不動の体勢で横向け水平に腕が上げられない" id="s12"/>直立不動の状態から横向け水平に腕を上げられない</label>　　　<label for="s13"><INPUT type="checkbox" name="首・背中・肩について" value="衣服の脱着が一人でできない" id="s13"/>衣服の脱着が一人でできない</label></td>
+      </tr>
+      <tr>
+        <td><label for="s14"><INPUT type="checkbox" name="首・背中・肩について" value="首を前後左右・回転させると腕や指先がしびれる" id="s14"/>首を前後左右・回転させると腕や指先がしびれる</label><BR />
+      <label for="s15"><INPUT type="checkbox" name="首・背中・肩について" value="こりや痛む場所をマッサージすると楽になる" id="s15"/>こりや痛む場所をマッサージすると楽になる</label></td>
+      </tr>
+      <tr>
+        <td><font color="#000000"><b>（a）　詳しい部位、いつ頃から症状が出ているのかを、詳しく記入してください。</b></font><BR />
+      <textarea rows="4" cols="90" name="首・背中・肩についてその他気が付いた事"></textarea></td>
+      </tr>
+      <tr>
+        <td>&#160;　　　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">手・足・腰についての質問</font></b>　　<b><font color="#990099">１<font color="#990099">８－２１</font></font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><label for="t1"><INPUT type="checkbox" name="手について" value="手が痛む" id="t1"/>手が痛む</label>　　　<label for="t2"><INPUT type="checkbox" name="手について" value="手がしびれる" id="t2"/>手がしびれる</label>　　　<label for="t3"><INPUT type="checkbox" name="手について" value="指先が痛む" id="t3"/>指先が痛む</label>　　　<label for="t4"><INPUT type="checkbox" name="手について" value="指先がしびれる" id="t4"/>指先がしびれる</label><BR />
+      <label for="t5"><INPUT type="checkbox" name="手について" value="指がこわばる" id="t5"/>指がこわばる</label>　　　<label for="t6"><INPUT type="checkbox" name="手について" value="手首が痛む" id="t6"/>手首が痛む</label>　　　<label for="t7"><INPUT type="checkbox" name="手について" value="手首がしびれる" id="t7"/>手首がしびれる</label>　　　<label for="t8"><INPUT type="checkbox" name="手について" value="手首がこわばる" id="t8"/>手首がこわばる</label><BR />
+      <label for="t9"><INPUT type="checkbox" name="手について" value="動き出す時に調子が悪く、動かすと良くなる" id="t9"/>動き出す時に調子が悪く、動かすと良くなる</label><BR />
+      <label for="t10"><INPUT type="checkbox" name="手について" value="動かさずにじっとしていると良いが、動かすと悪化する" id="t10"/>動かさずにじっとしていると良いが、動かすと悪化する</label></td>
+      </tr>
+      <tr>
+        <td><b>（ａ）　手や指・手首が痛む・しびれる・こわばる場合、どのような痛み方・しびれ方なのか、痛みやしびれる時間帯、痛む部位の詳しい場所や、いつ頃から痛みやしびれが出ているのか？など、出来るだけ詳しい情報を記入してください。<BR />
+      <textarea rows="4" cols="90" name="手や指・手首が痛む・しびれる・こわばる場合の詳細情報"></textarea></b></td>
+      </tr>
+      <tr>
+        <td>　　　　　　</td>
+      </tr>
+      <tr>
+        <td><label for="u1"><INPUT type="checkbox" name="足について" value="足が痛む" id="u1"/>足が痛む</label>　　　<label for="u2"><INPUT type="checkbox" name="足について" value="足がしびれる" id="u2"/>足がしびれる</label>　　　<label for="u3"><INPUT type="checkbox" name="足について" value="足がこわばる" id="u3"/>足がこわばる</label>　　　<label for="u4"><INPUT type="checkbox" name="足について" value="足の指が痛む" id="u4"/>足の指が痛む</label><BR />
+      <label for="u5"><INPUT type="checkbox" name="足について" value="足の指がしびれる" ID="u5"/>足の指がしびれる</label>　　　<label for="u6"><INPUT type="checkbox" name="足について" value="足の指がこわばる" id="u6"/>足の指がこわばる</label>　　　<label for="u7"><INPUT type="checkbox" name="足について" value="足がだるい" id="u7"/>足がだるい</label><BR />
+      <label for="u8"><INPUT type="checkbox" name="足について" value="よくこむら返りを起こす" id="u8"/>よくこむら返りを起こす</label>　　　<label for="u9"><INPUT type="checkbox" name="足について" value="足首が痛む" id="u9"/>足首が痛む</label>　　　<label for="u10"><INPUT type="checkbox" name="足について" value="足首がしびれる" id="u10"/>足首がしびれる</label><BR />
+      <label for="u11"><INPUT type="checkbox" name="足について" value="膝が痛む" id="u11"/>膝が痛む　　　</label><label for="u12"><INPUT type="checkbox" name="足について" value="膝が腫れている" id="u12"/>膝が腫れている</label>      <label for="u13"><INPUT type="checkbox" name="足について" value="膝に水が貯まっている" id="u13"/>膝に水が貯まっている</label><BR />
+        <label for="u15"><INPUT type="checkbox" name="足について" value="動き出す時に調子が悪く、動かすと良くなる" id="u15"/>動き出す時に調子が悪く、動かすと良くなる</label><BR />
+        <label for="u16"><INPUT type="checkbox" name="足について" value="動かさずにじっとしていると良いが、動かすと悪化する" id="u16"/>動かさずにじっとしていると良いが、動かすと悪化す</label><BR />
+        <label for="u17"><INPUT type="checkbox" name="足について" value="歩いたり立ちっぱなしの時はしばらく痛み、休憩すると痛みが良くなりまた歩けるようになる" id="u17"/>歩いたり立ちっぱなしの時はしばらく痛み、休憩すると痛みが良くなりまた歩けるようになる</label></td>
+      </tr>
+      <tr>
+        <td><b>（ｂ）　足や膝・足首が痛む・しびれる・こわばる場合、どのような痛み方・しびれ方なのか、痛みやしびれる時間帯、痛む部位の詳しい場所や、いつ頃から痛みやしびれが出ているのか？など、出来るだけ詳しい情報を記入してください。</b><BR />
+      <textarea rows="4" cols="90" name="足・膝・足首の痛みやしびれについての詳細な情報"></textarea></td>
+      </tr>
+      <tr>
+        <td>　　　　　　　</td>
+      </tr>
+      <tr>
+        <td><label for="v1"><INPUT type="checkbox" name="腰について" value="腰が痛む" id="v1"/>腰が痛む</label>　　　<label for="v2"><INPUT type="checkbox" name="腰について" value="腰がだるい" id="v2"/>腰がだるい</label>　　　<label for="v3"><INPUT type="checkbox" name="腰について" value="腰が重い" id="v3"/>腰が重い</label>　　　<label for="v4"><INPUT type="checkbox" name="腰について" value="ギックリ腰になった事がある" id="v4"/>ギックリ腰になった事がある</label><BR />
+      <label for="v5"><INPUT type="checkbox" name="腰について" value="動き出す時に調子が悪く、動かすと良くなる" id="v5"/>動き出す時に調子が悪く、動かすと良くなる</label>
+      <label for="v6"><INPUT type="checkbox" name="腰について" value="動かさずにじっとしていると良いが、動かすと悪化する" id="v6"/>動かさずにじっとしていると良いが、動かすと悪化す</label><BR />
+      <label for="v7"><INPUT type="checkbox" name="腰について" value="歩いたり立ちっぱなしの時はしばらく痛み、休憩すると痛みが良くなりまた歩けるようになる" id="v7"/>歩いたり立ちっぱなしの時はしばらく痛み、休憩すると痛みが良くなりまた歩けるようになる</label></td>
+      </tr>
+      <tr>
+        <td><b>（ｃ）　腰が痛む場合、どのような痛み方なのか、痛む時間帯、痛む部位の詳しい場所や、いつ頃から痛みが出ているのか？など、出来るだけ詳しい情報を記入してください。</b><BR />
+      <textarea rows="4" cols="90" name="腰が痛む場合、その詳細な情報"></textarea></td>
+      </tr>
+      <tr>
+        <td>&#160;　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">胸部・脇についての質問</font></b>　　<b><font color="#990099">１９－２１</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><label for="w1"><INPUT type="checkbox" name="胸部・脇について" value="胸や脇に圧迫感がある" id="w1"/>胸や脇に圧迫感がある</label>　　　<label for="w2"><INPUT type="checkbox" name="胸部・脇について" value="胸苦しく感じる" id="w2"/>胸苦しく感じる</label>　　　<label for="w3"><INPUT type="checkbox" name="胸部・脇について" value="胸や脇が痛む" id="w3"/>胸や脇が痛む</label>　　　<label for="w4"><INPUT type="checkbox" name="胸部・脇について" value="息切れがする" id="w4"/>息切れがする</label><BR />
+      <label for="w5"><INPUT type="checkbox" name="胸部・脇について" value="動くと息切れがする" id="w5"/>動くと息切れがする</label>　　　<label for="w6"><INPUT type="checkbox" name="胸部・脇について" value="安静にしていても息切れがする" id="w6"/>安静にしていても息切れがする</label>　　　<label for="w7"><INPUT type="checkbox" name="胸部・脇について" value="会話をすると息切れがする" id="w7"/>会話をすると息切れがする</label><BR />
+      <label for="w8"><INPUT type="checkbox" name="胸部・脇について" value="動悸がする" id="w8"/>動悸がする</label>　　　<label for="w9"><INPUT type="checkbox" name="胸部・脇について" value="動くと動悸がする" id="w9"/>動くと動悸がする</label>　　　<label for="w10"><INPUT type="checkbox" name="胸部・脇について" value="安静にしていても動悸がする" id="w10"/>安静にしていても動悸がする</label><BR />
+      <label for="w11"><INPUT type="checkbox" name="胸部・脇について" value="不整脈がある" id="w11"/>不整脈がある</label>　　　<label for="w12"><INPUT type="checkbox" name="胸部・脇について" value="ペースメーカーを使っている" id="w12"/>ペースメーカーを使っている</label><BR />
+      <label for="w14"><INPUT type="checkbox" name="胸部・脇について" value="胸や脇に張った感じがある" id="w14"/>胸や脇に張った感じがある</label>　　　<label for="w15"><INPUT type="checkbox" name="胸部・脇について" value="呼吸するときに息が吸いにくい" id="w15"/>呼吸するときに息が吸いにくい</label><BR />
+      <label for="w16"><INPUT type="checkbox" name="胸部・脇について" value="呼吸するときに息が吐きにくい" id="w16"/>呼吸するときに息が吐きにくい</label>　　　<label for="w17"><INPUT type="checkbox" name="胸部・脇について" value="過呼吸を起こす事がある（過換気症候群）" id="w17"/>過呼吸を起こす事がある（過換気症候群）</label></td>
+      </tr>
+      <tr>
+        <td><b>（a）　その他、気の付いた事があれば記入してください。</b><BR />
+      <textarea rows="4" cols="90" name="胸部・脇についてその他気付いた事"></textarea></td>
+      </tr>
+      <tr>
+        <td>&#160;　　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">胃腸についての質問</font></b>　　<b><font color="#990099">２０－２１</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td><label for="x1"><INPUT type="checkbox" name="胃腸について" value="胃がもたれる" id="x1"/>胃がもたれる</label>　　　<label for="x2"><INPUT type="checkbox" name="胃腸について" value="胃がつかえる" id="x2"/>胃がつかえる</label>　　　<label for="x3"><INPUT type="checkbox" name="胃腸について" value="胃が重い" id="x3"/>胃が重い</label>　　　<label for="x4"><INPUT type="checkbox" name="胃腸について" value="食後に胃が痛む" id="x4"/>食後に胃が痛む</label><BR />
+      <label for="x5"><INPUT type="checkbox" name="胃腸について" value="食前・食間に胃が痛む" id="x5"/>食前・食間に胃が痛む</label>　　　<label for="x6"><INPUT type="checkbox" name="胃腸について" value="胸やけがする" id="x6"/>胸やけがする</label>　　　<label for="x7"><INPUT type="checkbox" name="胃腸について" value="ゲップがよくでる" id="x7"/>ゲップがよくでる</label><BR />
+        <label for="x8"><INPUT type="checkbox" name="胃腸について" value="ムカムカする" id="x8"/>ムカムカする</label>　　　<label for="x9"><INPUT type="checkbox" name="胃腸について" value="胃がシクシク痛む" id="x9"/>胃がシクシク痛む</label>　　　<label for="x10"><INPUT type="checkbox" name="胃腸について" value="胃が刺すように痛い" id="x10"/>胃が刺すように痛い</label><BR />
+        <label for="x11"><INPUT type="checkbox" name="胃腸について" value="胃が焼けるように痛い" id="x11"/>胃が焼けるように痛い</label>　　　<label for="x12"><INPUT type="checkbox" name="胃腸について" value="吐くことがある" id="x12"/>吐くことがある</label>　　　<label for="x13"><INPUT type="checkbox" name="胃腸について" value="過食嘔吐がある" id="x13"/>過食嘔吐がある</label>　　　<label for="x14"><INPUT type="checkbox" name="胃腸について" value="食欲不振" id="x14"/>食欲不振</label><BR />
+        <label for="x15"><input type="checkbox" name="胃腸について" value="食欲旺盛" id="x15" />食欲旺盛</label>　　<label for="x16"><INPUT type="checkbox" name="胃腸について" value="少し食べるとお腹がふくれる" id="x16"/>少し食べるとお腹がふくれる</label>　　　<label for="x17"><INPUT type="checkbox" name="胃腸について" value="食べても直ぐにお腹がすく" id="x17"/>食べても直ぐにお腹がすく</label><BR />
+        <label for="x18"><INPUT type="checkbox" name="胃腸について" value="身体に悪いと思って無理に食事をしている" id="x18"/>身体に悪いと思って無理に食事をしている</label>　　　<label for="x19"><INPUT type="checkbox" name="胃腸について" value="朝昼夜の食事が待ち遠しい" id="x19"/>朝昼夜の食事が待ち遠しい</label><BR />
+        <label for="x20"><INPUT type="checkbox" name="胃腸について" value="食事が美味しく感じる" id="x20"/>食事が美味しく感じられる</label>　　　<label for="x21"><INPUT type="checkbox" name="胃腸について" value="お腹はすくが食べられない" id="x21"/>お腹はすくが食べられない</label>　　　<label for="x22"><INPUT type="checkbox" name="胃腸について" value="胃がチャプチャプする" id="x22"/>胃がチャプチャプする</label><BR />
+        <label for="x23"><INPUT type="checkbox" name="胃腸について" value="胃が熱く感じることがある" id="x23"/>胃が熱く感じることがある</label>　　　<label for="x24"><INPUT type="checkbox" name="胃腸について" value="胃が張って膨満感がある" id="x24"/>胃が張って膨満感がある</label><BR />
+        <label for="x25"><input type="checkbox" name="胃腸について" value="胃を手でさすると気分が悪くなる" id="x25" />胃を手でさすると気分が悪くなる</label>　　　<label for="x26"><INPUT type="checkbox" name="胃腸について" value="よく腹痛がする" id="x26"/>よく腹痛がする</label>　　　<label for="x27"><INPUT type="checkbox" name="胃腸について" value="腹が鳴る" id="x27"/>腹が鳴る</label>　　　<label for="x28"><INPUT type="checkbox" name="胃腸について" value="腹が冷える" id="x28"/>腹が冷える</label><BR />
+        <label for="x29"><INPUT type="checkbox" name="胃腸について" value="腹がすじばる" id="x29"/>腹がすじばる</label>　　　<label for="x30"><INPUT type="checkbox" name="胃腸について" value="ヘソの横辺りで動悸を打つ" id="x30"/>ヘソの横辺りで動悸を打つ</label>　　　<label for="x31"><input type="checkbox" name="よくガスが出る" id="x31" value="よくガスが出る" />よくガスが出る</label><BR />
+        <label for="x32"><INPUT type="checkbox" name="胃腸について" value="腹部膨満感や下腹部が張る" id="x32"/>腹部膨満感や下腹部に張った感じがある</label>　　　<label for="x33"><INPUT type="checkbox" name="胃腸について" value="お腹が張ってもガスが出ない" id="x33"/>お腹が張ってもガスが出ない</label></td>
+      </tr>
+      <tr>
+        <td><b>（a）　その他、気の付いた事があれば記入してください。</b><BR />
+      <textarea rows="4" cols="90" name="胃腸についてその他気が付いた事"></textarea></td>
+      </tr>
+      <tr>
+        <td>&#160;</td>
+      </tr>
+    <tr>
+        <td bgcolor="#ffffc1"><b><font color="#0000cc" size="+1">婦人科系についての質問　</font><font color="#cc0000" size="+1">＜女性のみ記入＞</font></b>　　<b><font color="#990099">２１－２１</font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+    <tr>
+        <td><label for="z1"><INPUT type="checkbox" name="生理について" value="生理周期は順調" id="z1"/>生理周期は順調</label>　　　<label for="z2"><INPUT type="checkbox" name="生理について" value="生理周期はバラバラ" id="z2"/>生理周期はバラバラ</label>　　　<label for="z3"><INPUT type="checkbox" name="生理について" value="生理は早めに来ることが多い" id="z3"/>生理は早めに来ることが多い</label><BR />
+      <label for="z4"><INPUT type="checkbox" name="生理について" value="生理は遅れることが多い" id="z4"/>生理は遅れることが多い</label>　　　<label for="z5"><INPUT type="checkbox" name="生理について" value="生理が来ないときがある" id="z5"/>生理が来ないときがある</label>　　　<label for="z6"><INPUT type="checkbox" name="生理について" value="不正出血する事がある" id="z6"/>不正出血する事がある</label></td>
+      </tr>
+      <tr>
+        <td>経血量について　　　<label for="z7"><INPUT type="radio" name="経血量" value="多い" id="z7"/>多い</label>　　　<label for="z8"><INPUT type="radio" name="経血量" value="やや多い" id="z8"/>やや多い</label>　　　<label for="z9"><INPUT type="radio" name="経血量" value="昔と変わらない" id="z9"/>昔と変わらない</label>　　　<label for="z10"><INPUT type="radio" name="経血量" value="少ない" id="z10"/>少ない</label><BR />
+      <font color="#0000ff"><b>☆健康だった時の量と比べて多いか少ないかです。 また、ナプキンの使用量などでも多いか少ないかを判断して下さい。（１日４～５枚が平均です）</b></font></td>
+      </tr>
+      <tr>
+        <td>　　　　　</td>
+      </tr>
+      <tr>
+        <td>月経が始まって完全に終わる期間　　<INPUT size="10" type="text" name="月経が始まって完全に終わる期間（日間）" />日間　<b>※出血している期間です</b></td>
+      </tr>
+      <tr>
+        <td>　　　　</td>
+      </tr>
+      <tr>
+        <td><label for="z11"><INPUT type="checkbox" name="生理痛について" value="生理痛がきつい" id="z11"/>生理痛がきつい</label>　　　<label for="z12"><INPUT type="checkbox" name="生理痛について" value="生理痛はあるがひどくない" id="z12"/>生理痛はあるがひどくない</label>　　　<label for="z13"><INPUT type="checkbox" name="生理痛について" value="生理痛はほとんどない" id="z13"/>生理痛はほとんどない</label><BR />
+      <label for="z14"><INPUT type="checkbox" name="生理痛について" value="排卵痛がある" id="z14"/>排卵痛がある</label>　　　<label for="z15"><INPUT type="checkbox" name="生理痛について" value="生理痛と同時に身体の別の場所が痛む" id="z15"/>生理痛と同時に身体の別の場所が痛む</label></td>
+      </tr>
+      <tr>
+        <td><b>生理痛はいつ起こりますか？</b><BR />
+      <label for="z16"><INPUT type="checkbox" name="生理痛の起こる時期" value="生理前" id="z16"/>生理前</label>　　　<label for="z17"><INPUT type="checkbox" name="生理痛の起こる時期" value="生理前から生理開始後" id="z17"/>生理前から生理開始後</label>　　　<label for="z18"><INPUT type="checkbox" name="生理痛の起こる時期" value="生理開始後" id="z18"/>生理開始後</label>　　　<label for="z19"><INPUT type="checkbox" name="生理痛の起こる時期" value="生理終了時" id="z19"/>生理終了時</label></td>
+      </tr>
+      <tr>
+        <td><b>おりものについて<BR />
+      <label for="z20"><INPUT type="checkbox" name="おりものについて" value="おりものはほとんど出ない" id="z20"/></label></b>おりものはほとんど出ない　　　<label for="z21"><INPUT type="checkbox" name="おりものについて" value="おりものが時々でる" id="z21"/>おりものが時々でる</label>　　　<label for="z22"><INPUT type="checkbox" name="おりものについて" value="排卵時期にでる程度" id="z22"/>排卵時期にでる程度</label><BR />
+      <label for="z23"><INPUT type="checkbox" name="おりものについて" value="おりものが多い" id="z23"/>おりものが多い</label>　　　<label for="z24"><INPUT type="checkbox" name="おりものについて" value="おりものがかなり多い" id="z24"/>おりものがかなり多い</label>　　　<label for="z25"><INPUT type="checkbox" name="おりものについて" value="おりものシートをよく使う" id="z25"/>おりものシートをよく使う</label></td>
+      </tr>
+      <tr>
+        <td><b>おりものの色は？</b><BR />
+      <label for="z26"><INPUT type="checkbox" name="おりものの色" value="透明" id="z26"/>透明</label>　　　　　<label for="z27"><INPUT type="checkbox" name="おりものの色" value="白っぽい透明" id="z27"/>白っぽい透明</label>　　　　　<label for="z28"><INPUT type="checkbox" name="おりものの色" value="白い" id="z28"/>白い</label>　　　　　<label for="z29"><INPUT type="checkbox" name="おりものの色" value="乳白色" id="z29"/>乳白色</label><BR />
+      <label for="z30"><INPUT type="checkbox" name="おりものの色" value="黄色" id="z30"/>黄色</label>　　　　　<label for="z31"><INPUT type="checkbox" name="おりものの色" value="黄緑色" id="z31"/>黄緑色</label>　　　　　<label for="z32"><INPUT type="checkbox" name="おりものの色" value="茶色" id="z32"/>茶色</label>　　　　　<label for="z33"><INPUT type="checkbox" name="おりものの色" value="茶褐色" id="z33"/>茶褐色</label></td>
+      </tr>
+      <tr>
+        <td><b>おりものの粘度は？</b><BR />
+      <label for="z34"><INPUT type="checkbox" name="おりものの粘度" value="サラサラ" id="z34"/>サラサラ</label>　　　<label for="z35"><INPUT type="checkbox" name="おりものの粘度" value="少しねばる" id="z35"/>少しねばる</label>　　　<label for="z36"><INPUT type="checkbox" name="おりものの粘度" value="かなりねばる" id="z36"/>かなりねばる</label>　　<label for="z37"><INPUT type="checkbox" name="おりものの粘度" value="チーズのカスのような物が混じる" id="z37"/>チーズのカスのような物が混じる</label></td>
+      </tr>
+      <tr>
+        <td><b>経血の粘度は？</b><BR />
+      <label for="z38"><INPUT type="checkbox" name="経血の粘度" value="サラサラ" id="z38"/>サラサラ</label>　　　<label for="z39"><INPUT type="checkbox" name="経血の粘度" value="少しねばる" id="z39"/>少しねばる</label>　　　<label for="z40"><INPUT type="checkbox" name="経血の粘度" value="かなりねばる" id="z40"/>かなりねばる</label>　　　<label for="z41"><INPUT type="checkbox" name="経血の粘度" value="レバーのような擬血塊が混じる" id="z41"/>レバーのような場血塊が混じる</label></td>
+      </tr>
+      <tr>
+        <td><b>経血の色調は？</b><BR />
+      <label for="z42"><INPUT type="checkbox" name="経血の色調" value="深紅色" id="z42"/>深紅色</label>　　　<label for="z43"><INPUT type="checkbox" name="経血の色調" value="深紅色で黒っぽい" id="z43"/>深紅色で黒っぽい</label>　　　<label for="z44"><INPUT type="checkbox" name="経血の色調" value="淡紅色" id="z44"/>淡紅色</label>　　　<label for="z45"><INPUT type="checkbox" name="経血の色調" value="淡紅色で黒っぽい" id="z45"/>淡紅色で黒っぽい</label><BR />
+      <label for="z46"><INPUT type="checkbox" name="経血の色調" value="稀薄な紅色" id="z46"/>稀薄な紅色</label><BR />
+      <b><font color="#000000">☆経血の色調見本は、以下をクリックして頂くと表示されます。</font></b><br />
+        <a href="http://www.seisindo.com/color.htm" target="_blank">http://www.seisindo.com/color.htm</a></td>
+      </tr>
+      <tr>
+        <td>　　　　</td>
+      </tr>
+      <tr>
+        <td><label for="z47"><INPUT type="checkbox" name="婦人科系その他の質問" value="生理前になると乳房が張る" id="z47"/>生理前になると乳房が張る</label>　　　<label for="z48"><INPUT type="checkbox" name="婦人科系その他の質問" value="生理前になると体調が悪くなる" id="z48"/>生理前になると体調が悪くなる</label><BR />
+      <label for="z49"><INPUT type="checkbox" name="婦人科系その他の質問" value="生理後に体調が悪くなる" id="z49"/>生理後に体調が悪くなる</label>　　　<label for="z50"><INPUT type="checkbox" name="婦人科系その他の質問" value="陰部のかゆみがある" id="z50"/>陰部のかゆみがある</label>　　　<label for="z51"><INPUT type="checkbox" name="婦人科系その他の質問" value="会陰にかゆみがある" id="z51"/>会陰にかゆみがある</label><BR />
+      <label for="z54"><INPUT type="checkbox" name="婦人科系その他の質問" value="中絶した事がある" id="z54"/>中絶した事がある</label><BR />
+      中絶の経験がある場合、その回数は？　<INPUT size="10" type="text" name="中絶した回数（回）" />回<BR />
+      初潮（始めて生理になった時）の年齢は？　<INPUT size="10" type="text" name="初潮の年齢（歳）" />歳</td>
+      </tr>
+    <tr>
+        <td><b>（ｂ）　その他、気の付いた事があれば記入してください。</b><BR />
+      <textarea rows="4" cols="90" name="婦人科系でその他気が付いた事"></textarea> <input type="hidden" name="**************************************************************" value=" " />
+</td>
+      </tr>
+      <tr>
+        <td>　　　　　　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffc1"><b><font size="+1" color="#0000cc">全体を通して、ここまでの質問の中で、不足している事や気になる事、特に聞きたい事などがありましたら、詳しく記入して下さい。</font></b><BR />
+      <textarea rows="6" cols="90" name="これまでの質問の中で、不足している事や気になる事、特に聞きたい事"></textarea><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td>　　　　　　　</td>
+      </tr>
+    <tr>
+        <td bgcolor="#dfffff"><b><font size="+1">★「夜尿症」でご相談の方は、おねしょの状態等を詳しく記入してください。<br />
+      </font></b>おねしょの時間は就寝後何時間ぐらい経ってからですか？　約<input size="6" name="おねしょの時間は就寝後何時間ぐらい経ってからか（時間）" type="text" style="background-color : white;" />時間後<br />
+        おねしょの回数は一晩で何回ぐらいありますか？　<input size="6" name="一晩のおねしょの回数（回）" type="text" style="background-color : white;" />回ぐらい<br />
+        一回のおねしょの量はどれぐらいですか？　　<label for="bb1"><input name="一回のおねしょの量" value="一回のおねしょの量は多い" type="radio" id="bb1"/>多い</label>　　　<label for="bb2"><input name="一回のおねしょの量" value="一回のおねしょの量は少ない" type="radio" id="bb2"/>少ない</label>　　　<label for="bb3"><input name="一回のおねしょの量" value="一回のおねしょの量はまちまち" type="radio" id="bb3"/>まちまち</label><br />
+        おねしょをされたときに、直ぐに目が覚めますか？<br />
+        <label for="bb4"><input name="おねしょをしたときに目が覚めるか" value="おねしょをしても全く目が覚めない" type="radio" id="bb4"/>全く目が覚めない</label>　　　　<label for="bb5"><input name="おねしょをしたときに目が覚めるか" value="おねしょをすると目を覚ます" type="radio" id="bb5"/>目を覚ます</label>　　　　<label for="bb6"><input name="おねしょをしたときに目が覚めるか" value="おねしょをして時々目を覚ます" type="radio" id="bb6"/>時々目を覚ます</label><br />
+        おねしょをしなかった日の朝一番の尿の色は　濃い黄色をしていますか？<br />
+        <label for="bb7"><input name="おねしょをしなかった日の朝一番の尿の色" value="おねしょをしなかった日の朝一番の尿は濃い黄色をしている" type="radio" id="bb7"/>はい</label>　　　　　<label for="bb8"><input name="おねしょをしなかった日の朝一番の尿の色" value="おねしょをしなかった日の朝一番の尿は濃い黄色をしていない" type="radio" id="bb8"/>いいえ</label>　　　　　<label for="bb9"><input name="おねしょをしなかった日の朝一番の尿の色" value="おねしょをしなかった日の朝一番の尿の色はわからない" type="radio" id="bb9"/>わからない</label><br />
+        おねしょで汚れたシーツや下着には、黄色いシミが残っていますか？<br />
+        <label for="bb10"><input name="おねしょで汚れたシーツや下着には、黄色いシミが残っているか" value="おねしょで汚れたシーツや下着には、黄色いシミが残っている" type="radio" id="bb10"/>はい</label>　　　　　<label for="bb11"><input name="おねしょで汚れたシーツや下着には、黄色いシミが残っているか" value="おねしょで汚れたシーツや下着には、黄色いシミが残っていない" type="radio" id="bb11"/>いいえ</label><br />
+        おしっこを我慢しすぎると、時々漏らすことはありませんか？<br />
+        <label for="bb12"><input name="おしっこを我慢しすぎると、時々漏らすことはあるか" value="おしっこを我慢すると漏らすことがある" type="radio" id="bb12"/>漏らすことがある</label>　　　　　<label for="bb13"><input name="おしっこを我慢しすぎると、時々漏らすことはあるか" value="おしっこを我慢しても漏らすことはない" type="radio" id="bb13"/>漏らすことはない</label><br />
+        医療機関でおねしょの治療をした事がある<br />
+        <label for="bb14"><input type="radio" name="医療機関でのおねしょの治療歴" value="医療機関でおねしょの治療をした" id="bb14"/>はい</label>　　　　　<label for="bb15"><input type="radio" name="医療機関でのおねしょの治療歴" value="おねしょの治療はした事がない" id="bb15"/>いいえ</label><br />
+        <b>（ａ）　その他、気の付いた事があれば記入してください。</b><br />
+        <textarea rows="4" cols="90" name="夜尿症についてその他気付いた事"></textarea><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td>&#160;　　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ecffed"><b><font size="+1">★「口臭・鼻臭・体臭」でご相談の方は、臭いの状態等を詳しく記入してください。</font></b><br />
+        あなたの口臭・鼻臭・体臭を、家族の方や周りの人から指摘された事がありますか？<br />
+        実際に口臭を指摘されている　　　<label for="cc1"><INPUT type="radio" value="はい" name="実際に口臭を指摘されている" id="cc1"/>はい</label>　　　　　<label for="cc2"><INPUT type="radio" value="いいえ" name="実際に口臭を指摘されている" id="cc2"/>いいえ</label><BR />
+      実際に鼻臭を指摘されている　　　<label for="cc3"><INPUT type="radio" value="はい" name="実際に鼻臭を指摘されている" id="cc3"/>はい</label>　　　　　<label for="cc4"><INPUT type="radio" value="いいえ" name="実際に鼻臭を指摘されている" id="cc4"/>いいえ</label><BR />
+      実際に体臭を指摘されている　　　<label for="cc5"><INPUT type="radio" value="はい" name="実際に体臭を指摘されている" id="cc5"/>はい</label>　　　　　<label for="cc6"><INPUT type="radio" value="いいえ" name="実際に体臭を指摘されている" id="cc6"/>いいえ</label><BR />
+      腋臭（わきが）がある　　　<label for="cc7"><INPUT type="radio" name="腋臭がある" value="はい" id="cc7"/>はい</label>　　　　　<label for="cc8"><INPUT type="radio" name="腋臭がある" value="いいえ" id="cc8"/>いいえ</label><BR />
+      陰部臭がある　　　<label for="cc9"><INPUT type="radio" name="陰部臭がある" value="はい" id="cc9"/>はい</label>　　　　　<label for="cc10"><INPUT type="radio" name="陰部臭がある" value="いいえ" id="cc10"/>いいえ</label><br />
+        自分では臭いを感じるが指摘されたことはない　　　<label for="cc11"><INPUT type="radio" value="はい" name="自分では臭いを感じるが指摘されたことがない" id="cc11"/>はい</label>　　　　　<label for="cc12"><INPUT type="radio" value="いいえ" name="自分では臭いを感じるが指摘されたことがない" id="cc12"/>いいえ</label><br />
+        周囲の人の仕草などで臭いを判断している　　　<label for="cc13"><INPUT type="radio" value="はい" name="周囲の人仕草で判断している" id="cc13"/>はい</label>　　　　　<label for="cc14"><INPUT type="radio" value="いいえ" name="周囲の人仕草で判断している" id="cc14"/>いいえ</label><BR />
+      家族には指摘されないが、会社や学校で指摘されている　　　<label for="cc15"><INPUT type="radio" name="家族にはしてされないが会社や学校で指摘されている" value="はい" id="cc15"/>はい</label>　　　　　<label for="cc16"><INPUT type="radio" name="家族にはしてされないが会社や学校で指摘されている" value="いいえ" id="cc16"/>いいえ</label><br />
+        どういう時に臭いをひどく感じますか？　<br />
+        <INPUT style="background-color : white;" size="60" name="臭いをひどく感じるとき" type="text" /><BR />
+      臭いが気にならない時はありますか？　（どう言う時に気にならないか？）<br />
+        <INPUT style="background-color : white;" size="60" name="臭いが気にならない時" type="text" /><br />
+        どのような臭いがしますか？または指摘されますか？（例えば、便臭や腐敗臭など）<br />
+        <INPUT style="background-color : white;" size="60" name="どのような臭いがするのか" type="text" /><br />
+        その臭いを、自分自身で感じられますか？　　　<label for="cc17"><INPUT type="radio" value="指摘された臭いを自分自身でも感じる" name="自分で臭いを感じる事が出来るか" id="cc17"/>はい</label>　　　　　<label for="cc18"><INPUT type="radio" value="指摘された臭いを自分自身では感じることが出来ない" name="自分で臭いを感じる事が出来るか" id="cc18"/>いいえ</label><br />
+        歯磨き・舌磨きは一日３回以上は念入りにしている　　　<label for="cc19"><INPUT type="radio" value="はい" name="歯磨き・舌磨きは一日３回以上は念入りにしている" id="cc19"/>はい</label>　　　　　<label for="cc20"><INPUT type="radio" value="いいえ" name="歯磨き・舌磨きは一日３回以上は念入りにしている" id="cc20"/>いいえ</label><br />
+        歯磨き・舌磨きの直後、口の中がヒリヒリしませんか？　　　<label for="cc21"><INPUT type="radio" value="しない" name="歯磨き・舌磨きの直後、口の中がヒリヒリしませんか" id="cc21"/>しない</label>　　　　　<label for="cc22"><INPUT type="radio" value="する" name="歯磨き・舌磨きの直後、口の中がヒリヒリしませんか" id="cc22"/>する</label><BR />
+      食事をする時、何か飲み物を飲まないと食べ物がのどにひっかかる　　　<label for="cc23"><INPUT type="radio" name="食事をするとき、何か飲み物を飲まないとのどにひっかかる" value="はい" id="cc23"/>はい</label>　　<label for="cc24"><INPUT type="radio" name="食事をするとき、何か飲み物を飲まないとのどにひっかかる" value="いいえ" id="cc24"/>いいえ</label><BR />
+      食事の時、よく舌を噛むことがある　　　<label for="cc25"><INPUT type="radio" name="食事の時、よく舌を噛む事がある" value="はい" id="cc25"/>はい</label>　　　　　<label for="cc26"><INPUT type="radio" name="食事の時、よく舌を噛む事がある" value="いいえ" id="cc26"/>いいえ</label><BR />
+      <b>（ａ）　その他、気の付いた事があれば記入してください。</b><BR />
+      <textarea style="background-color : white;" name="臭いについてその他気づいた事" rows="4" cols="90"></textarea><br /><input type="hidden" name="**************************************************************" value=" " />
+        </td>
+      </tr>
+      <tr>
+        <td>　　　</td>
+      </tr>
+      <tr>
+        <td bgcolor="#ffffee"><b><font size="+1">★「性器のかゆみ」でご相談の方は、皮膚の状態等を詳しく記入してください。</font></b><br />
+        <b>痒みのある部分にチェックを入れて下さい。</b><br />
+        <label for="dd1"><INPUT type="checkbox" value="陰毛の生えた部分" name="陰部掻痒　痒みのある部位" id="dd1"/>陰毛の生えた部分</label>　　　<label for="dd2"><INPUT type="checkbox" value="陰毛が生えた部分より外側" name="陰部掻痒　痒みのある部位" id="dd2"/>陰毛が生えた部分より外側</label>　　　<label for="dd3"><INPUT type="checkbox" value="陰唇の外側" name="陰部掻痒　痒みのある部位" id="dd3"/>陰唇の外側</label><BR />
+      <label for="dd4"><INPUT type="checkbox" value="陰唇内側の湿った部分" name="陰部掻痒　痒みのある部位" id="dd4"/>陰唇内側の湿った部分</label>　　　<label for="dd5"><INPUT type="checkbox" value="膣口付近" name="陰部掻痒　痒みのある部位" id="dd5"/>膣口付近</label>　　　<label for="dd6"><INPUT type="checkbox" value="膣口より奥の部分" name="陰部掻痒　痒みのある部位" id="dd6"/>膣口より奥の部分</label><br />
+        <label for="dd7"><INPUT type="checkbox" value="会陰部分" name="陰部掻痒　痒みのある部位" id="dd7"/>会陰部分（膣・陰嚢と肛門の間）</label>　　　<label for="dd8"><INPUT type="checkbox" value="肛門の周り（ヒダヒダの有るところ）" name="陰部掻痒　痒みのある部位" id="dd8"/>肛門の周り（ヒダヒダの有るところ）</label><BR />
+      <label for="dd9"><INPUT type="checkbox" value="肛門より外側の部分" name="陰部掻痒　痒みのある部位" id="dd9"/>肛門より外側の部分</label>　　　<label for="dd10"><INPUT type="checkbox" name="陰部掻痒　痒みのある部位" value="下着と擦れる部分" id="dd10"/>下着と擦れる部分</label><br />
+        <b><font color="#0000ff">＜男性のみ＞</font></b><br />
+        <label for="dd11"><INPUT type="checkbox" value="陰茎部分" name="陰部掻痒　痒みのある部位" id="dd11"/>陰茎部分</label>　　　<label for="dd12"><INPUT type="checkbox" value="亀頭部分" name="陰部掻痒　痒みのある部位" id="dd12"/>亀頭部分</label>　　　<label for="dd13"><INPUT type="checkbox" value="陰嚢と太ももが接する部分" name="陰部掻痒　痒みのある部位" id="dd13"/>陰嚢（袋の部分）と太ももが接する部分</label><br />
+        <label for="dd14"><INPUT type="checkbox" value="陰嚢の下着と接する部分" name="陰部掻痒　痒みのある部位" id="dd14"/>陰嚢の下着と接する部分</label><BR />
+      <br />
+        <b>上記にない場所を詳しく記入してください。</b><br />
+        <INPUT style="background-color : white;" size="60" name="陰部掻痒　痒みのある部位　その他" type="text" /><BR />
+      <BR />
+        <b>患部の状態について該当するところにチェックを入れてください。</b><br />
+        <label for="dd15"><INPUT type="checkbox" value="赤くなっている" name="患部の状態" id="dd15"/>赤くなっている</label>　　　<label for="dd16"><INPUT type="checkbox" value="皮膚の色に変化はない" name="患部の状態" id="dd16"/>皮膚の色に変化はない</label>　　　<label for="dd17"><INPUT type="checkbox" value="どす黒く変色している" name="患部の状態" id="dd17"/>どす黒く変色している</label><br />
+        <label for="dd18"><INPUT type="checkbox" value="乾燥している" name="患部の状態" id="dd18"/>乾燥している</label>　　　<label for="dd19"><INPUT type="checkbox" value="他の皮膚と変わりはない" name="患部の状態" id="dd19"/>他の皮膚と変わりはない</label>　　　<label for="dd20"><INPUT type="checkbox" value="ジュクジュクしている" name="患部の状態" id="dd20"/>ジュクジュクしている</label><br />
+        <label for="dd21"><INPUT type="checkbox" value="皮膚が厚くなりゴワゴワしている" name="患部の状態" id="dd21"/>皮膚が厚くなりゴワゴワしている</label>　　　<label for="dd22"><INPUT type="checkbox" value="ひび割れて痛む" name="患部の状態" id="dd22"/>ひび割れて痛む</label><br />
+        <label for="dd23"><INPUT type="checkbox" value="掻きすぎて血が出ている" name="患部の状態" id="dd23"/>掻きすぎて血が出ている</label>　　　<label for="dd24"><INPUT type="checkbox" value="入浴すると患部がしみる" name="患部の状態" id="dd24"/>入浴すると患部がしみる</label><br />
+        <label for="dd25"><INPUT type="checkbox" value="患部に熱感がある" name="患部の状態" id="dd25"/>患部に熱感がある</label>　　　<label for="dd26"><INPUT type="checkbox" value="患部が腫れている" name="患部の状態" id="dd26"/>患部が腫れている</label>　　　<label for="dd27"><INPUT type="checkbox" value="ブツブツが出来ている" name="患部の状態" id="dd27"/>ブツブツが出来ている</label><br />
+        <label for="dd28"><INPUT type="checkbox" value="化膿している部分もある" name="患部の状態" id="dd28"/>化膿している部分もある</label>　　　<label for="dd29"><INPUT type="checkbox" value="痒みが強く我慢できない" name="患部の状態" id="dd29"/>痒みが強く我慢できない</label><br />
+        <label for="dd30"><INPUT type="checkbox" value="痒みはあるが人前では我慢できる" name="患部の状態" id="dd30"/>痒みはあるが人前では我慢できる</label>　　　<label for="dd31"><INPUT type="checkbox" value="痒みはあるが強くはない" name="患部の状態" id="dd31"/>痒みはあるが強くはない</label><br />
+        <label for="dd32"><INPUT type="checkbox" value="何かに夢中になると痒みは忘れる" name="患部の状態" id="dd32"/>何かに夢中になると痒みは忘れる</label>　　　<label for="dd33"><INPUT type="checkbox" value="痒みは弱い" name="患部の状態" id="dd33"/>痒みは弱い</label><br />
+        上記にない患部の状態があれば詳しく記入してください。<br />
+        <INPUT style="background-color : white;" size="60" name="患部の状態　その他" type="text" /><br />
+        <b>（ａ）　その他、気の付いた事があれば記入してください。</b><BR />
+      <textarea rows="4" cols="90" name="陰部掻痒についてその他気付いた事"></textarea></td>
+      </tr>
+      <tr>
+        <td>　　　　</td>
+      </tr>
+      <tr>
+        <td align="center"><b><font color="#ff0000" size="+1"><font color="#ff0000" size="+2"><u>★★★★★　舌の状態は必ずご記入ください　★★★★★</u></font></font></b><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+      <tr>
+        <td bgcolor="#fff0e1">舌の状態は、身体の状態を忠実に表現しています。<br />
+        下記のＵＲＬをクリックしていただくと「舌診図」が現れます。　その「舌診図」とご自分の舌の状態を見比べて、<b><font color="#0000ff">「形はＮｏ，×と同じで、色はＮｏ，×、苔はＮｏ，×のような感じ」</font></b>と言う表現方法で結構ですので、なるべく詳しくご報告いただければより正確な診断が可能になります。<br />
+        <br />
+        　　　　　　　　<b>★舌診図</b>　　<a href="http://www.seisindo.com/zi/" target="_blank">http://www.seisindo.com/zi/</a><br />
+        <br />
+        <font color="#0000ff" size="+2"><font color="#0000ff" size="+2"><b>もし、カメラ付き携帯電話やデジタルカメラをお持ちでしたら舌の写真を撮ってメールに添付して頂くとより正確な判断が出来ます</b></font></font>。<br />
+        <b><font size="+1">★撮影の場合、出来ましたら太陽光下でのフラッシュ無しの撮影でお願いいたします。<br />
+        また、舌の先から奥がよく見えるように撮影してください。カメラ付き携帯等で撮影され、携帯メールに添付して送って頂ければ結構です。（本文にお名前を記入してください）</font></b><br />
+        <br />
+        ●<b><font size="+1">「舌診図と見比べた舌の状態」</font></b><br />
+        <b>（１）　舌の形　　　　　Ｎｏ，<INPUT style="background-color : white;" name="舌の形" type="text" size="20" />とよく似ている。<br />
+        （２）　舌の色　　　　　Ｎｏ，<INPUT style="background-color : white;" name="舌の色" type="text" size="20" />とよく似ている。<br />
+        （３）　苔の着き方　　Ｎｏ，<INPUT style="background-color : white;" name="舌苔の着き方" type="text" size="20" />とよく似ている。<br />
+        （４）　苔の色　　　　　Ｎｏ，<INPUT style="background-color : white;" name="舌苔の色" type="text" size="20" />とよく似ている。</b><br />
+        <br />
+        <b>（ａ）　その他お気づきの点が有りましたら、ご記入願います。また、上記の「舌診図」が表示出来なかった場合は、鏡でご自分の舌を観察され、色・形・舌苔の状態などを記入下さい</b>。<br />
+        <textarea rows="4" cols="90" name="舌の色・形・舌苔の状態　その他"></textarea></td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td align="center"><font size="+2" color="#009900"><font size="+2" color="#009900"><b>以上で問診票への記入が終了しました。</b></font></font><input type="hidden" name="**************************************************************" value=" " /></td>
+      </tr>
+    <tr>
+        <td></td>
+      </tr>
+    <tr>
+        <td align="center"><input type="submit" value="メールを送信する" /> 　　　　　<input type="reset" name="reset" value="リセット" /></td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td align="center">複写・転載・リンク等・無断使用禁止　　漢方のセイシンドー　Ver 8.1<br />
+        　　　　　　この問診票の著作権は漢方のセイシンドーにあります。</td>
+      </tr>
+    </tbody>
+  </table>
+  </form>
+</div>
+<div id="mf_wrapper"><script type="text/javascript" src="itvs/mailform.js" charset="utf-8"></script>
+<script type="text/javascript" src="itvs/email_validation.js" charset="utf-8"></script>
+<script type="text/javascript" src="itvs/form_validation.js" charset="utf-8"></script>
+			<script type="text/javascript" src="itvs/postcodes/get.cgi?js" charset="utf-8"></script>
+			</div>
+ </body>
+</html>

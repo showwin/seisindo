@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<title>漢方のセイシンドー注文書　携帯用</title>
+		<meta name="revisit_after" content="7 days" />
+		<meta name="robots" content="ALL" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<link rel="index" href="index.html" />
+		<meta name="Description" content="メールフォームCGI 6.1.0" />
+<meta name="GENERATOR" content="JustSystems Homepage Builder Version 15.0.12.0 for Windows" />
+</head>
+<body>
+<div id="mf_wrapper" align="center">
+			
+    <h1 style="text-align : center;" align="center">注文書</h1>
+ 
+<form id="mailform" method="post" action="odr/send.cgi" onsubmit="return sendmail(this);">
+  <table border="0" width="176" bgcolor="#ffddfd">
+    <tbody>
+      <tr>
+        <th align="left" width="5"></th>
+        <td align="left" width="176">■お名前<BR />
+      <INPUT type="text" name="お名前" size="20" /></td>
+      </tr>
+    <tr>
+        <th align="left" width="5"></th>
+        <td align="left" width="176">■郵便番号<BR />
+      <input type="text" name="郵便番号" size="10" /></td>
+      </tr>
+      <tr>
+        <th align="left" width="5"></th>
+        <td align="left" width="176">■お届け先ご住所<BR />
+      <INPUT type="text" name="住所(必須)" size="24" /></td>
+      </tr>
+    <tr>
+        <th align="left" width="5"></th>
+        <td width="176">■ご連絡先電話番号<BR />
+      <INPUT size="20" type="text" name="連絡先お電話番号" /></td>
+      </tr>
+    <tr>
+        <th align="left" width="5"></th>
+        <td align="left" width="176">■メールアドレス<BR />
+      <INPUT type="text" name="email" size="24" class="mf" /></td>
+      </tr>
+      <tr>
+        <th align="left" width="5"></th>
+        <td align="left" width="176">確認用メールアドレス<BR />
+      <INPUT type="text" name="confirm_email" size="24" class="mf" /></td>
+      </tr>
+    <tr>
+        <th align="left" width="5">&#160;</th>
+        <td align="left" width="176">&#160;</td>
+      </tr>
+      <tr>
+        <th align="left" width="5"></th>
+        <td width="176">◆お支払い方法<BR />
+      <INPUT type="radio" checked="checked" name="お支払い方法" value="代引き現金払い" />代引き現金払い<BR />
+      <INPUT type="radio" name="お支払い方法" value="代引きカード払い" />代引きカード払い<BR />
+      <INPUT type="radio" name="お支払い方法" value="オンラインカード決済" />オンラインカード決済<BR />
+      <INPUT type="radio" name="お支払い方法" value="ジャパンネット銀行へのお振込" />ジャパンネット銀行へのお振込<BR />
+      </td>
+      </tr>
+      <tr>
+        <th align="left" width="5"></th>
+        <td width="176">◆お届けご希望日<BR />
+      <INPUT type="radio" checked="checked" name="お届け希望日" value="最短" />最短<BR />
+      <INPUT type="radio" name="お届け希望日" value="特になし" />特になし<BR />
+      <INPUT type="radio" name="お届け希望日" value="指定する" />指定する<BR />
+      <select size="1" name="お届けご希望日（月）">
+          <option value="    " selected="selected">  </option>
+          <option value="１月"> 1</option>
+          <option value="２月"> 2</option>
+          <option value="３月"> 3</option>
+          <option value="４月"> 4</option>
+          <option value="５月"> 5</option>
+          <option value="６月"> 6</option>
+          <option value="７月"> 7</option>
+          <option value="８月"> 8</option>
+          <option value="９月"> 9</option>
+          <option value="１０月">10</option>
+          <option value="１１月">11</option>
+          <option value="１２月">12</option>
+        </select>月<select size="1" name="お届けご希望日（日）">
+          <option value="    " selected="selected">  </option>
+          <option value="１日">1</option>
+          <option value="２日">2</option>
+          <option value="３日">3</option>
+          <option value="４日">4</option>
+          <option value="５日">5</option>
+          <option value="６日">6</option>
+          <option value="７日">7</option>
+          <option value="８日">8</option>
+          <option value="９日">9</option>
+          <option value="１０日">10</option>
+          <option value="１１日">11</option>
+          <option value="１２日">12</option>
+          <option value="１３日">13</option>
+          <option value="１４日">14</option>
+          <option value="１５日">15</option>
+          <option value="１６日">16</option>
+          <option value="１７日">17</option>
+          <option value="１８日">18</option>
+          <option value="１９日">19</option>
+          <option value="２０日">20</option>
+          <option value="２１日">21</option>
+          <option value="２２日">22</option>
+          <option value="２３日">23</option>
+          <option value="２４日">24</option>
+          <option value="２５日">25</option>
+          <option value="２６日">26</option>
+          <option value="２７日">27</option>
+          <option value="２８日">28</option>
+          <option value="２９日">29</option>
+          <option value="３０日">30</option>
+          <option value="３１日">31</option>
+        </select>日<BR />
+      </td>
+      </tr>
+      <tr>
+        <th align="left" width="5"></th>
+        <td width="176">◆お届け時間帯指定<BR />
+      <INPUT type="radio" checked="checked" name="お届け時間帯指定" value="時間帯指定なし" />時間帯指定なし<BR />
+      <INPUT type="radio" name="お届け時間帯指定" value="午前中" />午前中<BR />
+        <INPUT type="radio" name="お届け時間帯指定" value="14:00～16:00" />14:00～16:00<BR />
+      <INPUT type="radio" name="お届け時間帯指定" value="16:00～18:00" />16:00～18:00<BR />
+      <INPUT type="radio" name="お届け時間帯指定" value="18:00～20:00" />18:00～20:00<BR />
+      <INPUT type="radio" name="お届け時間帯指定" value="19:00～21:00" />19:00～21:00<BR />
+      </td>
+      </tr>
+      <tr>
+        <th align="left" width="5"></th>
+        <td width="176">◆ご質問ご要望等<BR />
+      <textarea rows="4" cols="20" name="ご質問・ご要望等"></textarea></td>
+      </tr>
+    </tbody>
+  </table>
+  <table border="0">
+    <tbody>
+    <tr>
+        <td align="center" width="176">　=================</td>
+      </tr>
+    <tr>
+        <td align="center" bgcolor="#ffffb9" width="176"><INPUT type="submit" value="注文書を送信する" /><BR />
+      <INPUT type="reset" name="reset" value="書き直し" /></td>
+      </tr>
+      <tr>
+        <td width="169"></td>
+      </tr>
+      <tr>
+        <td width="169"></td>
+      </tr>
+    </tbody>
+  </table>
+  </form>
+</div>
+<div id="mf_wrapper"><script type="text/javascript" src="odr/mailform.js" charset="utf-8"></script>
+			<script type="text/javascript" src="odr/postcodes/get.cgi?js" charset="utf-8"></script>
+			<!--ここまでコピー＆ペーストすればまず間違いないです--></div>
+ </body>
+</html>

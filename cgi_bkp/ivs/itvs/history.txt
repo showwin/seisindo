@@ -1,0 +1,26 @@
+## Mailform Standard 6.5.0
+## Update:2012-05-12
+- 郵便番号辞書の呼び出しをわかりやすいようにした
+- 郵便番号辞書を最新データにアップデート！
+
+## 紆余曲折ありました ##
+
+# Mailform Std 6.1 / 2009-04-02
+- Yahoo!ジオシティーズ ジオプラス用設定追加
+- mailform.jsでlengthで出るエラーを回避
+- size、rows、colsでpx指定できるようにした
+- メールアドレスがメール内に記載されない問題を解決
+
+# Mailform Std 6.0.2 / 2009-02-13
+- マニュアルを修正
+- /mailform.js
+-- maxLengthを微調整
+
+# Mailform Std 6.0.1 / 2009-02-08
+- /send.cgi
+-- 127行目～129行目を修正
+-- サニタイジングしてみました。
+
+## COPYRIGHT
+SYNCK GRAPHICA
+http://www.synck.com

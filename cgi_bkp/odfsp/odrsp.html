@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="GENERATOR" content="JustSystems Homepage Builder Version 15.0.12.0 for Windows">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<CENTER>
+<TABLE height="413" width="266">
+  <TBODY>
+    <TR>
+      <TD align="center" width="633" height="234">
+      <DIV id="mf_wrapper" align="center">
+  <H1 style="text-align : center;" align="center">注文書</H1>
+  <FORM id="mailform" method="post" action="odr/send.cgi" onsubmit="return sendmail(this);">
+  <TABLE border="0" width="324" bgcolor="#ffddfd">
+    <TBODY>
+      <TR>
+        <TH align="left" width="5"></TH>
+        <TD align="left" width="296">■<B>お名前</B><BR>
+        <INPUT type="text" name="お名前" size="35"></TD>
+      </TR>
+      <TR>
+        <TH align="left" width="5"></TH>
+        <TD align="left" width="296">■<B>郵便番号</B><BR>
+        <INPUT type="text" name="郵便番号" size="15"></TD>
+      </TR>
+      <TR>
+        <TH align="left" width="5"></TH>
+        <TD align="left" width="296">■<B>お届け先ご住所</B><BR>
+        <INPUT type="text" name="住所(必須)" size="35"></TD>
+      </TR>
+      <TR>
+        <TH align="left" width="5"></TH>
+        <TD align="left" width="296">■<B>ご連絡先電話番号</B><BR>
+        <INPUT size="30" type="text" name="連絡先お電話番号"></TD>
+      </TR>
+      <TR>
+        <TH align="left" width="5"></TH>
+        <TD align="left" width="296">■<B>メールアドレス</B><BR>
+        <INPUT type="text" name="email" size="35" class="mf"></TD>
+      </TR>
+      <TR>
+        <TH align="left" width="5"></TH>
+        <TD align="left" width="296"><B>確認用メールアドレス</B><BR>
+        <INPUT type="text" name="confirm_email" size="35" class="mf"></TD>
+      </TR>
+      <TR>
+        <TH align="left" width="5">&nbsp;</TH>
+        <TD align="left" width="296">&nbsp;</TD>
+      </TR>
+      <TR>
+        <TH align="left" width="5"></TH>
+        <TD align="left" width="296">◆<B>お支払い方法</B><BR>
+        <LABEL for="a1"><INPUT type="radio" checked="checked" name="お支払い方法" value="代引き現金払い" id="a1">代引き現金払い<BR>
+        <BR>
+        </LABEL><LABEL for="a2"><INPUT type="radio" name="お支払い方法" value="代引きカード払い" id="a2">代引きカード払い<BR>
+        <BR>
+        </LABEL><LABEL for="a3"><INPUT type="radio" name="お支払い方法" value="オンラインカード決済" id="a3">オンラインカード決済<BR>
+        </LABEL><BR>
+        <LABEL for="a4"><INPUT type="radio" name="お支払い方法" value="ジャパンネット銀行へのお振込" id="a4">ジャパンネット銀行へのお振込</LABEL><BR>
+        <BR>
+        </TD>
+      </TR>
+      <TR>
+        <TH align="left" width="5"></TH>
+        <TD align="left" width="296"><font size="-1">★非効率的な再配達をなくすため、確実にお受け取り可能な日と時間帯をご指定下さい。</font><br>
+              ◆<B>お届けご希望日</B><br>
+              <LABEL for="a5"><INPUT type="radio" checked="checked" name="お届け希望日" value="最短" id="a5">最短<BR>
+        </LABEL><BR>
+        <LABEL for="a6"><INPUT type="radio" name="お届け希望日" value="特になし" id="a6">特になし<BR>
+        </LABEL><BR>
+        <LABEL for="a7"><INPUT type="radio" name="お届け希望日" value="指定する" id="a7">指定する<BR>
+        </LABEL><BR>
+        <SELECT size="1" name="お届けご希望日（月）">
+          <OPTION value="    " selected="selected"></OPTION>
+          <OPTION value="１月">1</OPTION>
+          <OPTION value="２月">2</OPTION>
+          <OPTION value="３月">3</OPTION>
+          <OPTION value="４月">4</OPTION>
+          <OPTION value="５月">5</OPTION>
+          <OPTION value="６月">6</OPTION>
+          <OPTION value="７月">7</OPTION>
+          <OPTION value="８月">8</OPTION>
+          <OPTION value="９月">9</OPTION>
+          <OPTION value="１０月">10</OPTION>
+          <OPTION value="１１月">11</OPTION>
+          <OPTION value="１２月">12</OPTION>
+        </SELECT>月<SELECT size="1" name="お届けご希望日（日）">
+          <OPTION value="    " selected="selected"></OPTION>
+          <OPTION value="１日">1</OPTION>
+          <OPTION value="２日">2</OPTION>
+          <OPTION value="３日">3</OPTION>
+          <OPTION value="４日">4</OPTION>
+          <OPTION value="５日">5</OPTION>
+          <OPTION value="６日">6</OPTION>
+          <OPTION value="７日">7</OPTION>
+          <OPTION value="８日">8</OPTION>
+          <OPTION value="９日">9</OPTION>
+          <OPTION value="１０日">10</OPTION>
+          <OPTION value="１１日">11</OPTION>
+          <OPTION value="１２日">12</OPTION>
+          <OPTION value="１３日">13</OPTION>
+          <OPTION value="１４日">14</OPTION>
+          <OPTION value="１５日">15</OPTION>
+          <OPTION value="１６日">16</OPTION>
+          <OPTION value="１７日">17</OPTION>
+          <OPTION value="１８日">18</OPTION>
+          <OPTION value="１９日">19</OPTION>
+          <OPTION value="２０日">20</OPTION>
+          <OPTION value="２１日">21</OPTION>
+          <OPTION value="２２日">22</OPTION>
+          <OPTION value="２３日">23</OPTION>
+          <OPTION value="２４日">24</OPTION>
+          <OPTION value="２５日">25</OPTION>
+          <OPTION value="２６日">26</OPTION>
+          <OPTION value="２７日">27</OPTION>
+          <OPTION value="２８日">28</OPTION>
+          <OPTION value="２９日">29</OPTION>
+          <OPTION value="３０日">30</OPTION>
+          <OPTION value="３１日">31</OPTION>
+        </SELECT>日<BR>
+        </TD>
+      </TR>
+      <TR>
+        <TH align="left" width="5"></TH>
+        <TD align="left" width="296">◆<B>お届け時間帯指定</B><BR>
+        <LABEL for="b1"><INPUT type="radio" checked="checked" name="お届け時間帯指定" value="時間帯指定なし" id="b1">時間帯指定なし<BR>
+        </LABEL><BR>
+        <LABEL for="b2"><INPUT type="radio" name="お届け時間帯指定" value="午前中" id="b2">午前中</LABEL><BR>
+        <BR>
+              <LABEL for="b4"><INPUT type="radio" name="お届け時間帯指定" value="14:00～16:00" id="b4">14:00～16:00<BR>
+        </LABEL><BR>
+        <LABEL for="b5"><INPUT type="radio" name="お届け時間帯指定" value="16:00～18:00" id="b5">16:00～18:00<BR>
+        </LABEL><BR>
+        <LABEL for="b6"><INPUT type="radio" name="お届け時間帯指定" value="18:00～20:00" id="b6">18:00～20:00<BR>
+        </LABEL><BR>
+        <LABEL for="b7"><INPUT type="radio" name="お届け時間帯指定" value="19:00～21:00" id="b7">19:00～21:00</LABEL><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TH align="left" width="5"></TH>
+        <TD align="left" width="296">◆ご質問ご要望等<BR>
+        <TEXTAREA rows="4" cols="35" name="ご質問・ご要望等"></TEXTAREA><BR>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+  <TABLE border="0">
+    <TBODY>
+      <TR>
+        <TD align="center" width="176">　=================</TD>
+      </TR>
+      <TR>
+        <TD align="center" bgcolor="#ffffb9" width="176"><INPUT type="submit" value="注文書を送信する"><BR>
+        <INPUT type="reset" name="reset" value="書き直し"></TD>
+      </TR>
+      <TR>
+        <TD width="400"></TD>
+      </TR>
+      <TR>
+        <TD width="400" align="center"><B>漢方のセイシンドー</B></TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+  </FORM>
+</DIV>
+<div id="mf_wrapper"><SCRIPT type="text/javascript" src="odr/mailform.js" charset="utf-8"></SCRIPT> <SCRIPT type="text/javascript" src="odr/postcodes/get.cgi?js" charset="utf-8"></SCRIPT> <!--ここまでコピー＆ペーストすればまず間違いないです--></div>
+</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</CENTER>
+</BODY>
+</HTML>

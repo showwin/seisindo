@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<title>漢方のセイシンドー注文書　ＰＣ用</title>
+		<meta name="revisit_after" content="7 days" />
+		<meta name="robots" content="ALL" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<link rel="index" href="index.html" />
+		<meta name="Description" content="メールフォームCGI 6.1.0" />
+<meta name="GENERATOR" content="JustSystems Homepage Builder Version 15.0.12.0 for Windows" />
+</head>
+<body>
+<div id="mf_wrapper" align="center">
+			
+    <h1 style="text-align : center;" align="center">ご注文頂きありがとうございます</h1>
+ 
+<form id="mailform" method="post" action="odr/send.cgi" onsubmit="return sendmail(this);">
+  <table border="0" width="700" bgcolor="#ffddfd">
+    <tbody>
+      <tr>
+        <th align="left" width="185">お名前</th>
+        <td align="left" width="415"><input type="text" name="お名前" size="40" /></td>
+      </tr>
+    <tr>
+        <th align="left" width="185">郵便番号</th>
+        <td align="left" width="415"><input type="text" name="郵便番号" size="10" /> <input type="button" value="〒から住所を自動入力" onclick="mfpc('mailform','郵便番号','住所(必須)');" /></td>
+      </tr>
+      <tr>
+        <th align="left" width="185">お届け先ご住所</th>
+        <td align="left" width="415"><input type="text" name="住所(必須)" size="70" /></td>
+      </tr>
+    <tr>
+        <th align="left" width="185">連絡先お電話番号</th>
+        <td width="415"><INPUT size="60" type="text" name="連絡先お電話番号" /></td>
+      </tr>
+    <tr>
+        <th align="left" width="185">メールアドレス<span></span></th>
+        <td align="left" width="415"><INPUT type="text" name="email" size="60" maxlength="60" class="mf" /></td>
+      </tr>
+      <tr>
+        <th align="left" width="185">確認用メールアドレス<span></span></th>
+        <td align="left" width="415"><input type="text" name="confirm_email" size="60" class="mf" /></td>
+      </tr>
+    <tr>
+        <th align="left" width="185">&#160;</th>
+        <td align="left" width="415">&#160;</td>
+      </tr>
+      <tr>
+        <th align="left" width="185">お支払い方法</th>
+        <td width="415"><select size="1" name="お支払い方法">
+          <option value="代引き現金払い" selected="selected">　代引き　現金払い</option>
+          <option value="代引きカード払い">　代引き　カード払い</option>
+          <option value="オンラインカード決済">　オンラインカード決済</option>
+          <option value="ジャパンネット銀行へお振込">　ジャパンネット銀行へお振込</option>
+        </select></td>
+      </tr>
+      <tr>
+        <th align="center"></th>
+        <td>&#160;<font size="-1">★非効率的な再配達をなくすため、確実にお受け取り可能な日と時間帯をご指定下さい。</font></td>
+      </tr>
+      <tr>
+        <th align="left" width="185">お届けご希望日</th>
+        <td width="415"><select size="1" name="お届けご希望日（月）">
+          <option value="最短" selected="selected">　最短</option>
+          <option value="特になし">　特になし</option>
+          <option value="１月">　１</option>
+          <option value="２月">　２</option>
+          <option value="３月">　３</option>
+          <option value="４月">　４</option>
+          <option value="５月">　５</option>
+          <option value="６月">　６</option>
+          <option value="７月">　７</option>
+          <option value="８月">　８</option>
+          <option value="９月">　９</option>
+          <option value="１０月">　１０</option>
+          <option value="１１月">　１１</option>
+          <option value="１２月">　１２</option>
+        </select>月　<select size="1" name="お届けご希望日（日）">
+          <option value="　　　" selected="selected">　　　　</option>
+          <option value="１日">　１</option>
+          <option value="２日">　２</option>
+          <option value="３日">　３</option>
+          <option value="４日">　４</option>
+          <option value="５日">　５</option>
+          <option value="６日">　６</option>
+          <option value="７日">　７</option>
+          <option value="８日">　８</option>
+          <option value="９日">　９</option>
+          <option value="１０日">　１０</option>
+          <option value="１１日">　１１</option>
+          <option value="１２日">　１２</option>
+          <option value="１３日">　１３</option>
+          <option value="１４日">　１４</option>
+          <option value="１５日">　１５</option>
+          <option value="１６日">　１６</option>
+          <option value="１７日">　１７</option>
+          <option value="１８日">　１８</option>
+          <option value="１９日">　１９</option>
+          <option value="２０日">　２０</option>
+          <option value="２１日">　２１</option>
+          <option value="２２日">　２２</option>
+          <option value="２３日">　２３</option>
+          <option value="２４日">　２４</option>
+          <option value="２５日">　２５</option>
+          <option value="２６日">　２６</option>
+          <option value="２７日">　２７</option>
+          <option value="２８日">　２８</option>
+          <option value="２９日">　２９</option>
+          <option value="３０日">　３０</option>
+          <option value="３１日">　３１</option>
+        </select>日</td>
+      </tr>
+      <tr>
+        <th align="left" width="185">お届け時間帯指定</th>
+        <td width="415"><select size="1" name="お届け時間帯指定">
+          <option value="お届け時間帯指定なし" selected="selected">　お届け時間帯指定なし</option>
+          <option value="「午前中指定」">　「午前中」</option>
+          <option value="１４：００～１６：００">　「１４：００～１６：００」</option>
+          <option value="１６：００～１８：００">　「１６：００～１８：００」</option>
+          <option value="１８：００～２０：００">　「１８：００～２０：００」</option>
+          <option value="１９：００～２１：００">　「１９：００～２１：００」</option>
+        </select></td>
+      </tr>
+      <tr>
+        <th width="185" align="left">ご質問ご要望等</th>
+        <td width="415"><textarea rows="4" cols="70" name="ご質問・ご要望等"></textarea></td>
+      </tr>
+    </tbody>
+  </table>
+  <table border="0" width="700">
+    <tbody>
+      <tr>
+        <td align="left" bgcolor="#d9ffec">&#160;●<b><font size="+1">お支払いの方法</font></b><br />
+        <b><font color="#0000ff" size="+1">ヤマトコレクトサービス</font></b>または<b><font color="#0000ff" size="+1">オンラインカード決済</font></b>及び<b><font color="#0000ff" size="+1">ジャパンネット銀行へのお振込</font></b>がご利用いただけます。<br />
+        <br />
+        ★<b><font color="#0000ff" size="+1">ヤマトコレクトサービス</font></b>は、商品配達の際に、配達員へお支払いをお願いいたします。<br />
+        お支払いは、<b><font size="+1"><u>現金またはクレジットカード・デビットカードでお支払い頂けます</u></font></b>。ご都合の良い方をお選び下さい。<br />
+        なお、お買い上げ金額が１万円未満５０００円以上の場合、代引き手数料の一部（２００円）と、送料の一部（５００円）ご負担をお願いいたしております。<br />
+        ５０００円未満の場合は、送料・代引き手数料は実費をご負担願います。何卒ご容赦願います。<br />
+        <b><font color="#ff0000" size="+1">お買上金額が１万円以上の場合は、送料・代引き手数料は不要です。</font></b><br />
+        <br />
+        ★<b><font color="#0000ff" size="+1">オンラインカード決済</font></b>でのお支払いをご希望の方は、お気軽お申しつけください。後ほどカード決済用のＵＲＬをメールでご案内させていただきます。クリックして記入して頂くだけで決済が安全に行えます。<font color="#ff0000"><u>カード情報等は全て暗号化されます</u></font>。<br />
+        <br />
+        ★<b><font color="#0000ff" size="+1">ジャパンネット銀行</font><font color="#000000">(銀行コード　００３３)</font><font color="#0000ff" size="+1">へのお振込</font></b>をご利用の場合。<br />
+        <br />
+        支店名　<b><font color="#0000ff">本店営業部（ホンテン）</font></b><br />
+        店番号　<b><font color="#0000ff">001</font></b>　　口座番号　<b><font color="#0000ff">7460408</font></b><br />
+        口座名義　漢方のセイシンドー進藤道雄<br />
+        　　　　　<b><font color="#0000ff">カンポウノセイシンドーシンドウミチオ</font></b>　<br />
+        上記の口座へお振込ください。<br />
+        <b><font color="#ff0000">「振込手数料」は、当店が負担いたしますので、ご入金の際は、振込手数料を引いた金額でお支払いください。</font></b><br />
+        お振込が確認出来次第、発送させて頂きます。<br />
+        <br />
+        <b>お薬のお受け取りに、職場や宅配ボックス等をご利用の方は、オンラインカード決済やジャパンネット銀行のお振込をご利用いただくと便利です。</b><br />
+        <br />
+        　　　　　　　　★★★★　<b><font size="+1">よくお読み下さい</font></b>　★★★★<br />
+        オンラインカード決済は、海外の銀行を通して決済されますので、決済時の為替レートにより実際の決済額と請求額が異なります。だいたい数％の増減がありますのでご了承下さい。<br />
+        例えば、決済金額が１５０００円としても、請求時には１６２５０円になっている場合もあります。なお、ＪＣＢ・ＶＩＳＡ・MasterCardをご利用の場合は、為替レートによる変動はございません。<br />
+        <b><font color="#ff0000" size="+1"><u>ＪＣＢ・ＶＩＳＡ・MasterCardのご利用をお勧めします。</u></font></b><br />
+        ★ 
+カード利用明細には、当店の名前でなくオンライン決済会社の管理番号「ET***数字***」又は「Telecom 
+Credit」と掲載されますのでご了承願います<br />
+        </td>
+      </tr>
+      <tr>
+        <td align="center">　================================================================================</td>
+      </tr>
+    <tr>
+        <td align="center" bgcolor="#ffffb9"><INPUT type="submit" value="注文書を送信する" /> 　　　　　<INPUT type="reset" name="reset" value="書き直し" /></td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td align="center"><b>漢方のセイシンドー</b></td>
+      </tr>
+    </tbody>
+  </table>
+  </form>
+</div>
+<div id="mf_wrapper"><script type="text/javascript" src="odr/mailform.js" charset="utf-8"></script>
+			<script type="text/javascript" src="odr/postcodes/get.cgi?js" charset="utf-8"></script>
+			<!--ここまでコピー＆ペーストすればまず間違いないです--></div>
+ </body>
+</html>
