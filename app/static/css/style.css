@@ -253,15 +253,6 @@
 }
 /*************
 /* サイドバー *************/
- #sidebar ul{
-    padding:10px;
-}
- #sidebar li{
-     margin-bottom:10px;
-     padding-bottom:10px;
-     list-style:none;
-     border-bottom:1px dashed #ebebeb;
-}
  #sidebar li:last-child{
      border:0;
      margin-bottom:0px;
