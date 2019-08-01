@@ -21,3 +21,10 @@ $ FLASK_DEBUG=1 python -m flask run
 
 * s/notice.html
 * info003.htm
+
+
+## サーバーの中
+
+```shell
+$ nohup sudo FLASK_DEBUG=1 python3 -m flask run --port 80 --host 0.0.0.0 &
+```
