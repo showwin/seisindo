@@ -623,3 +623,9 @@
     font-weight: 600;
     line-height: 1.125;
 }
+
+.email {
+    margin-top: 12px;
+    font-size: 17px;
+    font-weight: bold;
+}

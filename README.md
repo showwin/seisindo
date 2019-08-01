@@ -22,6 +22,10 @@ $ FLASK_DEBUG=1 python -m flask run
 * s/notice.html
 * info003.htm
 
+## その他TODO
+
+* 店頭での相談は、完全予約制という事も、よくわかるようにお願いします。
+
 
 ## サーバーの中
 
