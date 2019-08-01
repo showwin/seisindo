@@ -23,6 +23,6 @@ def guidance():
     return render_template('guidance.html')
 
 
-@view.route('/list/hunin')
-def list_hunin():
-    return render_template('disease_list/hunin.html')
+@view.route('/list/<path:filename>')
+def disease_list(filename):
+    return render_template(f'disease_list/{filename}.html')
