@@ -89,6 +89,11 @@
  .logo span{
     display:block;
 }
+ .logo img{
+    position: relative;
+    top: 5px;
+    width: 340px;
+ }
 /*************
 /* 電話番号 *************/
  .info{
@@ -619,13 +624,13 @@
 
 .shop_name {
     color: #363636;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     line-height: 1.125;
 }
 
 .email {
-    margin-top: 12px;
+    margin-top: 24px;
     font-size: 17px;
     font-weight: bold;
 }
