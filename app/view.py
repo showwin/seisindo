@@ -26,3 +26,10 @@ def guidance():
 @view.route('/list/<path:filename>')
 def disease_list(filename):
     return render_template(f'disease_list/{filename}.html')
+
+
+# TODO
+@view.route('/yakusei')
+def yakusei():
+    # http://www.seisindo.com/yakusei.htm
+    return render_template('yakusei.html')
