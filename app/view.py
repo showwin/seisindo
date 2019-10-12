@@ -5,27 +5,37 @@ view = Blueprint('root', __name__, url_prefix='/')
 
 @view.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', tab='top')
 
 
 @view.route('/notification')
 def notification():
-    return render_template('notification.html')
+    return render_template('notification.html', tab='notification')
 
 
 @view.route('/kanpo')
 def kanpo():
-    return render_template('kanpo.html')
+    return render_template('kanpo.html', tab='kanpo')
 
 
 @view.route('/guidance')
 def guidance():
-    return render_template('guidance.html')
+    return render_template('guidance.html', tab='guidance')
 
 
 @view.route('/access')
 def access():
-    return render_template('access.html')
+    return render_template('access.html', tab='access')
+
+
+@view.route('/consulting')
+def consulting():
+    return render_template('consulting.html', tab='consulting')
+
+
+@view.route('/necessity')
+def necessity():
+    return render_template('necessity.html')
 
 
 @view.route('/list/<path:filename>')

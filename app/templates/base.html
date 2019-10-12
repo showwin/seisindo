@@ -46,12 +46,53 @@
       	<a class="menu" id="menu"><span>MENU</span></a>
     		<div class="panel">
         	<ul>
-        		<li class="active"><a href="/"><strong>トップページ</strong><span>Top</span></a></li>
-    				<li><a href="/notification"><strong>お知らせ</strong><span>Notification</span></a></li>
-    				<li><a href="/kanpo"><strong>漢方の考え方</strong><span>Kanpo</span></a></li>
-    				<li><a href="/guidance"><strong>ご購入の方法</strong><span>Guidance</span></a></li>
-    				<li><a href="/access"><strong>アクセス</strong><span>Access</span></a></li>
-    				<li class="last"><a href="/consulting"><strong>病気のご相談</strong><span>Consulting</span></a></li>
+            {% if tab == 'top' %}
+        		  <li class="active">
+            {% else %}
+              <li>
+            {% endif %}
+              <a href="/"><strong>トップページ</strong><span>Top</span></a>
+            </li>
+
+    				{% if tab == 'notification' %}
+        		  <li class="active">
+            {% else %}
+              <li>
+            {% endif %}
+              <a href="/notification"><strong>お知らせ</strong><span>Notification</span></a>
+            </li>
+
+    				{% if tab == 'kanpo' %}
+        		  <li class="active">
+            {% else %}
+              <li>
+            {% endif %}
+              <a href="/kanpo"><strong>漢方の考え方</strong><span>Kanpo</span></a>
+            </li>
+
+    				{% if tab == 'guidance' %}
+        		  <li class="active">
+            {% else %}
+              <li>
+            {% endif %}
+              <a href="/guidance"><strong>ご購入の方法</strong><span>Guidance</span></a>
+            </li>
+
+    				{% if tab == 'access' %}
+        		  <li class="active">
+            {% else %}
+              <li>
+            {% endif %}
+              <a href="/access"><strong>アクセス</strong><span>Access</span></a>
+            </li>
+
+            {% if tab == 'consulting' %}
+        		  <li class="last active">
+            {% else %}
+              <li class="last">
+            {% endif %}
+              <a href="/consulting"><strong>病気のご相談</strong><span>Consulting</span></a>
+            </li>
     			</ul>
         </div>
     	</div>
@@ -148,20 +189,11 @@
   		<!-- / 左側 -->
   		<!-- 右側 ナビゲーション -->
   		<ul class="footnav">
-  			<li><a href="/">TOP</a></li>
-  			<li><a href="/notification">お知らせ</a></li>
-  			<li><a href="/kanpo">漢方の考え方</a></li>
-  			<li><a href="/guidance">ご購入の方法</a></li>
-  			<li><a href="/access">アクセス</a></li>
-  			<li><a href="/consulting">病気のご相談</a></li>
-  			<li><a href="/contact">お問い合わせ</a></li>
-  			<li><a href="about.html">当サイトについて</a></li>
+        Copyright(c) 漢方のセイシンドー. All Rights Reserved.
   		</ul>
-  		<!-- / 右側 ナビゲーション -->
   	</div>
   </footer>
   	<!-- / フッター -->
-  Copyright(c) 漢方のセイシンドー. All Rights Reserved.
 
   </body>
 </html>
