@@ -23,6 +23,11 @@ def guidance():
     return render_template('guidance.html')
 
 
+@view.route('/access')
+def access():
+    return render_template('access.html')
+
+
 @view.route('/list/<path:filename>')
 def disease_list(filename):
     return render_template(f'disease_list/{filename}.html')
