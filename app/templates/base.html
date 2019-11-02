@@ -1,103 +1,104 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="ja">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
-    <meta name="Keywords" content="漢方,漢方薬,漢方療法,口臭,専門薬局,漢方相談,漢方治療,東洋医学,口臭治療">
-    <meta name="Description" content="漢方のセイシンドーでは、メール・ＦＡＸによるあらゆる疾患の無料漢方相談が好評です。
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="Keywords" content="漢方,漢方薬,漢方療法,口臭,専門薬局,漢方相談,漢方治療,東洋医学,口臭治療">
+  <meta name="Description" content="漢方のセイシンドーでは、メール・ＦＡＸによるあらゆる疾患の無料漢方相談が好評です。
     漢方薬・漢方は病名や症状で選ぶのではなく、漢方（漢方薬）を服用される方の体質に合わせて漢方処方（漢方薬）を選びます。
     また、漢方薬は漢方医学的考え方を元にして使うべきであり、決して西洋医学的な考え方で使ってはなりません。
     漢方薬は正しく使えば副作用もなく、身体にやさしい薬です。素人判断で漢方薬を使われますと効かないだけでなく副作用が出ることもあります。
     漢方（漢方薬）の事なら漢方療法専門・漢方のセイシンドーへお気軽にご相談下さい。漢方・漢方薬のご相談は、漢方のセイシンドーへ">
-    <title>漢方・漢方薬のご相談は、漢方専門　漢方のセイシンドー</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma_0.7.5.css') }}" type="text/css" media="screen">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" media="screen">
-    <script src="js/jquery1.7.2.min.js"></script>
-    <script src="js/script.js"></script>
-  </head>
+  <title>漢方・漢方薬のご相談は、漢方専門　漢方のセイシンドー</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bulma_0.7.5.css') }}" type="text/css" media="screen">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" media="screen">
+  <script src="js/jquery1.7.2.min.js"></script>
+  <script src="js/script.js"></script>
+</head>
 
-  <body id="subpage">
-    <header id="header">
-    	<h1></h1>
-      <!-- ロゴ -->
-    	<div class="logo">
-        <div class='shop_name'>
-          <a href="/">
-            漢方療法専門
-            <img src="{{ url_for('static', filename='img/logo_alpha.png') }}">
-          </a>
-    	  </div>
-        <span>漢方のセイシンドーでは、難解な漢方・漢方薬について皆様にわかりやすく解説いたしております。</span>
+<body id="subpage">
+  <header id="header">
+    <h1></h1>
+    <!-- ロゴ -->
+    <div class="logo">
+      <div class='shop_name'>
+        <a href="/">
+          漢方療法専門
+          <img src="{{ url_for('static', filename='img/logo_alpha.png') }}">
+        </a>
       </div>
-    	<!-- / ロゴ -->
-    	<!-- 電話番号+営業時間 -->
-      <div class="info">
-    		<p class="email"><span>email:</span> <a href="mailto:ms@seisindo.com?Subject=メール漢方相談">ms@seisindo.com</a></p>
-    		<p class="open">営業時間: 平日 AM 9:00 ～ PM 5:00</p>
-        <p class="open">定休日: 毎週月曜日 (臨時休業あり)</p>
-    	</div>
-    	<!-- / 電話番号+営業時間 -->
-    </header>
+      <span>漢方のセイシンドーでは、難解な漢方・漢方薬について皆様にわかりやすく解説いたしております。</span>
+    </div>
+    <!-- / ロゴ -->
+    <!-- 電話番号+営業時間 -->
+    <div class="info">
+      <p class="email"><span>email:</span> <a href="mailto:ms@seisindo.com?Subject=メール漢方相談">ms@seisindo.com</a></p>
+      <p class="open">営業時間: 平日 AM 9:00 ～ PM 5:00</p>
+      <p class="open">定休日: 毎週月曜日 (臨時休業あり)</p>
+    </div>
+    <!-- / 電話番号+営業時間 -->
+  </header>
 
   <!-- メインナビゲーション -->
-    <nav id="mainNav">
-    	<div class="inner">
-      	<a class="menu" id="menu"><span>MENU</span></a>
-    		<div class="panel">
-        	<ul>
-            {% if tab == 'top' %}
-        		  <li class="active">
+  <nav id="mainNav">
+    <div class="inner">
+      <a class="menu" id="menu"><span>MENU</span></a>
+      <div class="panel">
+        <ul>
+          {% if tab == 'top' %}
+          <li class="active">
             {% else %}
-              <li>
+          <li>
             {% endif %}
-              <a href="/"><strong>トップページ</strong><span>Top</span></a>
-            </li>
+            <a href="/"><strong>トップページ</strong><span>Top</span></a>
+          </li>
 
-    				{% if tab == 'notification' %}
-        		  <li class="active">
+          {% if tab == 'notification' %}
+          <li class="active">
             {% else %}
-              <li>
+          <li>
             {% endif %}
-              <a href="/notification"><strong>お知らせ</strong><span>Notification</span></a>
-            </li>
+            <a href="/notification"><strong>お知らせ</strong><span>Notification</span></a>
+          </li>
 
-    				{% if tab == 'kanpo' %}
-        		  <li class="active">
+          {% if tab == 'kanpo' %}
+          <li class="active">
             {% else %}
-              <li>
+          <li>
             {% endif %}
-              <a href="/kanpo"><strong>漢方の考え方</strong><span>Kanpo</span></a>
-            </li>
+            <a href="/kanpo"><strong>漢方の考え方</strong><span>Kanpo</span></a>
+          </li>
 
-    				{% if tab == 'guidance' %}
-        		  <li class="active">
+          {% if tab == 'guidance' %}
+          <li class="active">
             {% else %}
-              <li>
+          <li>
             {% endif %}
-              <a href="/guidance"><strong>ご購入の方法</strong><span>Guidance</span></a>
-            </li>
+            <a href="/guidance"><strong>ご購入の方法</strong><span>Guidance</span></a>
+          </li>
 
-    				{% if tab == 'access' %}
-        		  <li class="active">
+          {% if tab == 'access' %}
+          <li class="active">
             {% else %}
-              <li>
+          <li>
             {% endif %}
-              <a href="/access"><strong>アクセス</strong><span>Access</span></a>
-            </li>
+            <a href="/access"><strong>アクセス</strong><span>Access</span></a>
+          </li>
 
-            {% if tab == 'consulting' %}
-        		  <li class="last active">
+          {% if tab == 'consulting' %}
+          <li class="last active">
             {% else %}
-              <li class="last">
+          <li class="last">
             {% endif %}
-              <a href="/consulting"><strong>病気のご相談</strong><span>Consulting</span></a>
-            </li>
-    			</ul>
-        </div>
-    	</div>
-    </nav>
-    <!-- / メインナビゲーション -->
+            <a href="/consulting"><strong>病気のご相談</strong><span>Consulting</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- / メインナビゲーション -->
 
   <div id="wrapper">
     {% block content %}{% endblock %}
@@ -167,33 +168,34 @@
 
   <!-- フッター -->
   <footer id="footer">
-  	<div class="inner">
-    	<!-- 左側 -->
-  		<div id="info" class="grid">
-  			<!-- ロゴ -->
-  			<div class="logo">
+    <div class="inner">
+      <!-- 左側 -->
+      <div id="info" class="grid">
+        <!-- ロゴ -->
+        <div class="logo">
           <a href="/">
             漢方療法専門 漢方のセイシンドー<br>
             <span>漢方のセイシンドーでは、難解な漢方・漢方薬について皆様にわかりやすく解説いたしております。</span>
           </a>
-  			</div>
-  			<!-- / ロゴ -->
-  			<!-- 電話番号+営業時間 -->
-  			<div class="info">
-      		<p class="tel"><span>email:</span> <a href="mailto:ms@seisindo.com?Subject=メール漢方相談">ms@seisindo.com</a></p>
-      		<p class="open">受付時間: 平日 AM 9:00 ～ PM 5:00</p>
+        </div>
+        <!-- / ロゴ -->
+        <!-- 電話番号+営業時間 -->
+        <div class="info">
+          <p class="tel"><span>email:</span> <a href="mailto:ms@seisindo.com?Subject=メール漢方相談">ms@seisindo.com</a></p>
+          <p class="open">受付時間: 平日 AM 9:00 ～ PM 5:00</p>
           <p class="open">定休日: 毎週月曜日 (臨時休業あり)</p>
-      	</div>
-      			<!-- / 電話番号+営業時間 -->
+        </div>
+        <!-- / 電話番号+営業時間 -->
       </div>
-  		<!-- / 左側 -->
-  		<!-- 右側 ナビゲーション -->
-  		<ul class="footnav">
+      <!-- / 左側 -->
+      <!-- 右側 ナビゲーション -->
+      <ul class="footnav">
         Copyright(c) 漢方のセイシンドー. All Rights Reserved.
-  		</ul>
-  	</div>
+      </ul>
+    </div>
   </footer>
-  	<!-- / フッター -->
+  <!-- / フッター -->
 
-  </body>
+</body>
+
 </html>

@@ -47,6 +47,8 @@ $ FLASK_DEBUG=1 python -m flask run
   * http -> https のリダイレクト  
 * [ ] CircleCIからのデプロイ処理 (2hour)
 
+## 相談箇所
+* [ ] サイドバーの病気一覧をいい感じにグルーピングしてもらう
 
 ## サーバーの中
 
