@@ -38,6 +38,12 @@ def necessity():
     return render_template('necessity.html')
 
 
+# 購入後に送るページ (リンクなし)
+@view.route('/notice')
+def notice():
+    return render_template('notice.html')
+
+
 @view.route('/list/<path:filename>')
 def disease_list(filename):
     return render_template(f'disease_list/{filename}.html')

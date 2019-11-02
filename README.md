@@ -20,7 +20,6 @@ $ FLASK_DEBUG=1 python -m flask run
 ## リンクさせていないけど使っているHTML
 
 * s/notice.html
-* info003.htm
 
 ## 全体TODO
 * [x] アクセスページの作成
