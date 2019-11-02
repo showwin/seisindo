@@ -16,16 +16,11 @@ $ source myenv/bin/activate
 $ FLASK_DEBUG=1 python -m flask run
 ```
 
-
-## リンクさせていないけど使っているHTML
-
-* s/notice.html
-
 ## 全体TODO
 * [x] アクセスページの作成
 * [x] 病気のご相談ページの作成
 * [x] 症状一覧
-* [ ] リンクが無かったページに対してリンクを貼る (30min)
+* [x] リンクが無かったページに対してリンクを貼る (30min)
 * [ ] 問診票の実装
   * [ ] 画面の実装 (3hour)
   * [ ] 問診票記入後は、メールを送る。(30min)
@@ -43,6 +38,7 @@ $ FLASK_DEBUG=1 python -m flask run
 * [ ] サイドバーの病気一覧をいい感じにグルーピングしてもらう
 
 ## サーバーの中
+IP: 18.176.140.126
 
 ```shell
 $ nohup sudo FLASK_DEBUG=1 python3 -m flask run --port 80 --host 0.0.0.0 &
