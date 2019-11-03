@@ -39,10 +39,21 @@ $ FLASK_DEBUG=1 python -m flask run
 * [ ] 問診票送信完了ページ http://www.seisindo.com/sousin.htm
 
 ## 方向転換後
+
+`./pug` にすべてが入っている。
+```
+$ pwd
+/Users/showwin/Develop/Python/seisindo/pug/templates
+
+$ pug -w . -o ../dist -P
+# ↑でwatchしてdistに吐き出す
+```
+
 Pythonでホスティングしなくなったので、PugでHTMLを出力してそれを渡すようにする。
 * [ ] 「アクセス」のところで「お車でお越しの場合」の項を全て削除して貰えますか？これを書いた時点と今とでは、状況が目まぐるしく変わっているので、「電車でお越しの方」のみの掲載にしようと思います。
 * [ ] 購入後に送るページ http://www.seisindo.com/kanryou.htm
 * [ ] 問診票送信完了ページ http://www.seisindo.com/sousin.htm
+* [ ] SPになったときにMENUのトグルが動かない
 
 ## 相談箇所
 * [ ] サイドバーの病気一覧をいい感じにグルーピングしてもらう

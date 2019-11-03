@@ -1,12 +1,13 @@
 extends base.pug
 block variables
-  - var topTag = true;
+  - var topTab = true;
+  - var staticRoot = '../';
 
 block content
   section#main
     // メイン画像
     #mainBanner
-      img(src="{{ url_for('static', filename='img/shop.jpg') }}", width='680', height='140', alt='')
+      img(src="../img/shop.jpg", width='680', height='140', alt='')
       .inner
     // / メイン画像
     section.content
