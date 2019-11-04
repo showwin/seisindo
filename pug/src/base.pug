@@ -1,4 +1,5 @@
 - var projectRoot = '.';
+- var staticRoot = '.';
 block variables
 doctype html
 html(dir='ltr', lang='ja')
@@ -13,8 +14,8 @@ html(dir='ltr', lang='ja')
     漢方薬は正しく使えば副作用もなく、身体にやさしい薬です。素人判断で漢方薬を使われますと効かないだけでなく副作用が出ることもあります。\
     漢方（漢方薬）の事なら漢方療法専門・漢方のセイシンドーへお気軽にご相談下さい。漢方・漢方薬のご相談は、漢方のセイシンドーへ')
     title 漢方・漢方薬のご相談は、漢方専門　漢方のセイシンドー
-    link(rel='stylesheet', href=staticRoot + "static/css/bulma_0.7.5.css", type='text/css', media='screen')
-    link(rel='stylesheet', href=staticRoot + "static/css/style.css", type='text/css', media='screen')
+    link(rel='stylesheet', href=staticRoot + "/static/css/bulma_0.7.5.css", type='text/css', media='screen')
+    link(rel='stylesheet', href=staticRoot + "/static/css/style.css", type='text/css', media='screen')
     script(src=staticRoot + 'static/js/jquery-3.4.1.min.js')
     script(src=staticRoot + 'static/js/script.js')
   body#subpage
@@ -25,7 +26,7 @@ html(dir='ltr', lang='ja')
         .shop_name
           a(href=projectRoot + '/index.html')
             | 漢方療法専門
-            img(src=staticRoot + "static/img/logo_alpha.png")
+            img(src=staticRoot + "/static/img/logo_alpha.png")
         span 漢方のセイシンドーでは、難解な漢方・漢方薬について皆様にわかりやすく解説いたしております。
       // / ロゴ
       // 電話番号+営業時間
@@ -159,7 +160,7 @@ html(dir='ltr', lang='ja')
           #info.grid
             // ロゴ
             .logo
-              a(href='/')
+              a(href=projectRoot + '/index.html')
                 | 漢方療法専門 漢方のセイシンドー
                 br
                 span 漢方のセイシンドーでは、難解な漢方・漢方薬について皆様にわかりやすく解説いたしております。

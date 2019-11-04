@@ -41,13 +41,20 @@ $ FLASK_DEBUG=1 python -m flask run
 ## 方向転換後
 
 `./pug` にすべてが入っている。
+
+### 開発時
 ```
 $ pwd
-/Users/showwin/Develop/Python/seisindo/pug/templates
+/Users/showwin/Develop/Python/seisindo/pug/src
+
+$ cp -r ./static ../dist
 
 $ pug -w . -o ../dist -P
 # ↑でwatchしてdistに吐き出す
 ```
+
+### 
+
 
 Pythonでホスティングしなくなったので、PugでHTMLを出力してそれを渡すようにする。
 * [x] 「アクセス」のところで「お車でお越しの場合」の項を全て削除して貰えますか？これを書いた時点と今とでは、状況が目まぐるしく変わっているので、「電車でお越しの方」のみの掲載にしようと思います。
