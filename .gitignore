@@ -27,3 +27,4 @@ myenv/
 *.icloud
 
 *.psd
+pug/dist/*
